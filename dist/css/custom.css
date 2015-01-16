@@ -106,7 +106,7 @@ p {
 .sticky {
 	top: 51px;
 	position: fixed;
-  	z-index: 1030;
+  	z-index: 1000;
 }
 /*Vertically centers images within Bootstrap columns*/
 .vcenter {
