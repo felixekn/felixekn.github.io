@@ -147,3 +147,6 @@ td {
 .jumbotron {
 	background-color: transparent;
 }
+.sidebar {
+	padding-top: 12px;
+}
