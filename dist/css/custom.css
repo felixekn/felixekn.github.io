@@ -14,6 +14,13 @@ body {
 	overflow: hidden;
     text-align: center;
 }
+@media (max-width: 600px) {
+  	.item {
+    	height: 150px;
+  	}
+}
+
+
 .image {
 	text-align: center;
 }
@@ -88,19 +95,19 @@ p {
 	padding-left: 0;
 }
 @media (min-width: 768px) {
-  .splash {
-    width: 750px;
-  }
+  	.splash {
+    	width: 750px;
+  	}
 }
 @media (min-width: 992px) {
-  .splash {
-    width: 970px;
-  }
+  	.splash {
+    	width: 970px;
+  	}
 }
 @media (min-width: 1200px) {
-  .splash {
-    width: 1170px;
-  }
+  	.splash {
+    	width: 1170px;
+	}
 }
 
 .sticky {
