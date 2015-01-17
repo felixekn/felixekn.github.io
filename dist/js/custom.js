@@ -3,18 +3,9 @@ var splash_height = $('.splash').height();
 var splash_from_top = $('.splash').offset().top;
 var slide = true;
 
-// Carousel image resize function
-$(function() {
-    $(window).resize(function() {
-        var $i = $('.image');
-        var $c = $i.parent();
-        var dimen = $i.width() - $c.width(), height = $i.height() - $c.height();            
-        if (dimen[0] < 0) { $i.width($c.width()); }
-        if (dimen[1] < 0) { $i.height($c.height()); }
-    });
-    $(window).resize();
+$(window).resize(function() {
     splash_height = $('.splash').height();
-	splash_from_top = $('.splash').offset().top;
+    splash_from_top = $('.splash').offset().top + $('.splash').scrollTop();
 });
 
 // Splash banner sticky function

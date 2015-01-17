@@ -10,17 +10,9 @@ body {
 	margin-bottom: 15px;
 }
 .item {
-	height: 350px;
 	overflow: hidden;
     text-align: center;
 }
-@media (max-width: 600px) {
-  	.item {
-    	height: 150px;
-  	}
-}
-
-
 .image {
 	text-align: center;
 }
