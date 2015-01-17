@@ -5,7 +5,7 @@ var splash_from_top = $('.navbar').outerHeight(true) +
                       $('.banner-placement').outerHeight(true);
 var slide = true;
 
-// Updates sticky variables
+// Updates sticky variables after a screen resize
 $(window).resize(function() {
     splash_from_top = $('.navbar').outerHeight(true) +
                       $('.banner-placement').outerHeight(true);

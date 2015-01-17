@@ -20,6 +20,7 @@ body {
 .body-text {
 	position: relative;
 }
+
 .carousel-control.left, .carousel-control.right {
 	background-image: none;
 }
@@ -40,18 +41,23 @@ body {
 .navbar-brand .active, 
 .navbar-default .navbar-nav>.active>a:hover, 
 .navbar-default .navbar-nav>.active>a:focus{
-	-webkit-animation: myfirst 0.5s; /* Chrome, Safari, Opera */
-    animation: myfirst 0.5s;
+	-webkit-animation: highlight 0.5s; /* Chrome, Safari, Opera */
+	-moz-animation: hightlight 0.5s; /* FireFox */
+    animation: highlight 0.5s;
     background: rgba(165, 200, 237, 0.21);
 	/*#A5C8ED;*/
 }
 /* Chrome, Safari, Opera */
-@-webkit-keyframes myfirst {
+@-webkit-keyframes highlight {
     from {background: none;}
     to {background: rgba(165, 200, 237, 0.21);}
 }
+@-moz-keyframes hightlight {
+	from {background: none;}
+    to {background: rgba(165, 200, 237, 0.21);}
+}
 /* Standard syntax */
-@keyframes myfirst {
+@keyframes highlight {
 	from {background: none;}
     to {background: rgba(165, 200, 237, 0.21);}
 }
@@ -139,6 +145,21 @@ td {
 .jumbotron {
 	background-color: transparent;
 }
-.sidebar {
-	padding-top: 12px;
+.blog-sidebar {
+	margin-top: 12px;
+	background-color: #f5f5f5;
+	padding-right: 0px;
+	right: 15px;
+	border-radius: 4px;
+	box-shadow: 0 1px 0 rgba(0,0,0,.1);
+}
+.blog-post-meta {
+	margin-bottom: 7px;
+	color: #999;
+}
+.blog-post-title {
+	margin-bottom: 0px;
+}
+.blog-description {
+	margin-bottom: 0px;
 }
