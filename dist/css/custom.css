@@ -3,7 +3,6 @@ body {
   padding-top: 70px;
   background: #ecf0f1;
 }
-
 .banner-placement {
 	position: relative;
 	/*max-height: 400px;*/
@@ -16,11 +15,9 @@ body {
 .image {
 	text-align: center;
 }
-
 .body-text {
 	position: relative;
 }
-
 .carousel-control.left, .carousel-control.right {
 	background-image: none;
 }
@@ -36,7 +33,6 @@ body {
 	border-radius: 4px;
 	box-shadow: 0 1px 0 rgba(0,0,0,.2);
 }
-
 .navbar-default .navbar-nav>.active>a,
 .navbar-brand .active, 
 .navbar-default .navbar-nav>.active>a:hover, 
@@ -61,7 +57,6 @@ body {
 	from {background: none;}
     to {background: rgba(165, 200, 237, 0.21);}
 }
-
 .navbar-default .navbar-brand {
 	color: #337ab7;
 }
@@ -69,7 +64,6 @@ body {
 .navbar-default .navbar-brand:focus {
 	color: #0057A1;
 }
-
 .container {
 	max-width: 1000px;
 	padding-right: 0;
@@ -107,7 +101,6 @@ p {
     	width: 1170px;
 	}
 }
-
 .sticky {
 	top: 51px;
 	position: fixed;
@@ -162,4 +155,10 @@ td {
 }
 .blog-description {
 	margin-bottom: 0px;
+}
+.name {
+	margin-bottom: 0px;
+}
+.position {
+	color: #999;
 }
