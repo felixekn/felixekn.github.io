@@ -41,7 +41,6 @@ body {
 	-moz-animation: hightlight 0.5s; /* FireFox */
     animation: highlight 0.5s;
     background: rgba(165, 200, 237, 0.21);
-	/*#A5C8ED;*/
 }
 /* Chrome, Safari, Opera */
 @-webkit-keyframes highlight {
@@ -161,4 +160,13 @@ td {
 }
 .position {
 	color: #999;
+}
+.map {
+	width: 100%;
+}
+.contact {
+	padding-top: 20px;
+}
+.top-heading {
+	margin-top: 0px;
 }
