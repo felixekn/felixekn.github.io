@@ -28,7 +28,7 @@ body {
 .text {
 	padding: 20px;
 	padding-top: 1px;
-	margin-bottom: 15px;
+	margin-bottom: 7px;
 	background-color: #fff;
 	border-radius: 4px;
 	box-shadow: 0 1px 0 rgba(0,0,0,.2);
@@ -57,6 +57,7 @@ body {
     to {background: rgba(165, 200, 237, 0.21);}
 }
 .navbar-default .navbar-brand {
+	font-size: 22px;
 	color: #337ab7;
 }
 .navbar-default .navbar-brand:hover,
@@ -169,4 +170,8 @@ td {
 }
 .top-heading {
 	margin-top: 0px;
+}
+.bio-info {
+	text-align: left;
+	/*width: 200px;*/
 }
