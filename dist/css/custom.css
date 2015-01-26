@@ -5,7 +5,7 @@ body {
 }
 .banner-placement {
 	position: relative;
-	/*max-height: 400px;*/
+	/*max-height: 150px;*/
 	margin-bottom: 15px;
 }
 .item {
@@ -57,11 +57,13 @@ body {
     to {background: rgba(165, 200, 237, 0.21);}
 }
 .navbar-default .navbar-brand {
-	font-size: 22px;
+	font-size: 24px;
+	/*color: #383838;*/
 	color: #337ab7;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
+	/*color: #232324;*/
 	color: #0057A1;
 }
 .container {
@@ -73,6 +75,7 @@ p {
 	/*text-align: justify;*/
 }
 .splash {
+	/*background-color: #383838;*/
 	background-color: #337ab7;
 	padding: .2em .6em .3em;
 	font-size: 75%;
