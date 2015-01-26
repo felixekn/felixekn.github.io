@@ -22,14 +22,16 @@ $(window).resize(function() {
 
 // Splash banner sticks below nav when the splash banner is scrolled past the nav
 $(window).scroll(function() {
-    if (($(window).scrollTop() >= (splash_from_top - nav_height)) && slide) {
-        $('.splash').addClass('sticky');
-    	$('.text').animate({marginTop: "+=" + splash_height}, 0);
-    	slide = false;
-    } else if (($(window).scrollTop() < (splash_from_top - nav_height)) && !slide) {
-        console.log("removed sticky")
-        $('.splash').removeClass('sticky');
-    	$('.text').animate({marginTop: "-=" + splash_height}, 0);
-    	slide = true;
+    if ($(window).width() > 768 || !slide) {
+        if (($(window).scrollTop() >= (splash_from_top - nav_height)) && slide) {
+            $('.splash').addClass('sticky');
+        	$('.text').animate({marginTop: "+=" + splash_height}, 0);
+        	slide = false;
+        } else if (($(window).scrollTop() < (splash_from_top - nav_height)) && !slide) {
+            console.log("removed sticky")
+            $('.splash').removeClass('sticky');
+        	$('.text').animate({marginTop: "-=" + splash_height}, 0);
+        	slide = true;
+        }
     }
 });

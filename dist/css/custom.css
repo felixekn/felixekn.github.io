@@ -104,6 +104,11 @@ body {
 #navbar {
 	float: right;
 }
+@media (max-width: 768px) {
+	#navbar {
+		float: none;
+	}
+}
 #navbar > ul > li > a {
 	color: white;
 }
@@ -165,6 +170,7 @@ body {
 	position: fixed;
   	z-index: 1000;
 }
+
 /*Vertically centers images within Bootstrap columns*/
 .vcenter {
 	display: inline-block;
