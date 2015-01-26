@@ -1,12 +1,9 @@
 body {
-  /*min-height: 2000px;*/
-  padding-top: 70px;
-  background: #ecf0f1;
-}
-#banner.carousel.slide {
-	border-style: solid;
-	border-width: 2px;
-	border-color: #383838;
+	/*min-height: 2000px;*/
+	padding-top: 70px;
+	background: #ecf0f1;
+	font-smooth:always;
+	-webkit-font-smoothing: antialiased;
 }
 .banner-placement {
 	position: relative;
@@ -65,15 +62,39 @@ body {
     to {background: rgba(165, 200, 237, 0.21);}
 }
 .navbar-default .navbar-brand {
-	font-size: 24px;
+	font-size: 26px;
 	font-weight: bold;
-	color: #383838;
+	color: white;
+	/*color: #383838;*/
 	/*color: #337ab7;*/
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-	color: #232324;
+	color: rgba(255,255,255,0.9);
+	/*color: #232324;*/
 	/*color: #0057A1;*/
+}
+.navbar-default {
+	background-color: #383838;
+	border-color: #5C5353;
+}
+#navbar > ul > li > a {
+	color: white;
+}
+#navbar > ul > li > a:hover,
+#navbar > ul > li > a:focus {
+	color: rgba(255,255,255,0.9);
+}
+.navbar-nav {
+	font-size: 18px;
+}
+@media (max-width: 992px) {
+	.navbar-nav {
+		font-size: 14px;
+	}
+	.navbar-default .navbar-brand {
+		font-size: 24px;
+	}
 }
 .container {
 	max-width: 1000px;
@@ -187,11 +208,4 @@ td {
 	text-align: left;
 	/*width: 200px;*/
 }
-.navbar-nav {
-	font-size: 16px;
-}
-@media (max-width: 992px) {
-	.navbar-nav {
-		font-size: 14px;
-	}
-}
+
