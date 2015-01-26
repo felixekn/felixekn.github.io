@@ -1,5 +1,4 @@
 body {
-	/*min-height: 2000px;*/
 	padding-top: 70px;
 	background: #ecf0f1;
 	font-smooth:always;
@@ -26,9 +25,10 @@ body {
 	font-size: 40px;
 }
 .carousel-indicators .active, .carousel-indicators li {
+	margin: 1px;
 	border-radius: 0px;
-	width: 25px;
-	height: 13px;
+	width: 26px;
+	height: 10px;
 }
 .text {
 	padding: 20px;
@@ -38,8 +38,30 @@ body {
 	border-radius: 4px;
 	box-shadow: 0 1px 0 rgba(0,0,0,.2);
 }
-.navbar-default .navbar-nav>.active>a,
-.navbar-brand .active, 
+.navbar-slider {
+	-webkit-animation: underline 0.5s; /* Chrome, Safari, Opera */
+	-moz-animation: underline 0.5s; /* FireFox */
+    animation: underline 0.5s;
+	position: fixed;
+	height: 50px;
+	width: 10px;
+    background: rgba(101,129,145, 1);
+}
+/* Chrome, Safari, Opera */
+@-webkit-keyframes underline {
+    from {background: none;}
+    to {background: rgba(101,129,145, 1);}
+}
+@-moz-keyframes underline {
+	from {background: none;}
+    to {background: rgba(101,129,145, 1);}
+}
+/* Standard syntax */
+@keyframes underline {
+	from {background: none;}
+    to {background: rgba(101,129,145, 1);}
+}
+.navbar-default .navbar-nav>.active>a, 
 .navbar-default .navbar-nav>.active>a:hover, 
 .navbar-default .navbar-nav>.active>a:focus{
 	-webkit-animation: highlight 0.5s; /* Chrome, Safari, Opera */
@@ -65,25 +87,34 @@ body {
 	font-size: 26px;
 	font-weight: bold;
 	color: white;
-	/*color: #383838;*/
-	/*color: #337ab7;*/
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-	color: rgba(255,255,255,0.9);
-	/*color: #232324;*/
-	/*color: #0057A1;*/
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;
+	color: rgba(255,255,255,0.7);
 }
 .navbar-default {
 	background-color: #383838;
-	border-color: #5C5353;
+	border: 0px;
+}
+#navbar {
+	float: right;
 }
 #navbar > ul > li > a {
 	color: white;
 }
 #navbar > ul > li > a:hover,
 #navbar > ul > li > a:focus {
-	color: rgba(255,255,255,0.9);
+	-webkit-transition: all 500ms ease;
+	-moz-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+	-o-transition: all 500ms ease;
+	transition: all 500ms ease;
+	color: rgba(255,255,255,0.7);
 }
 .navbar-nav {
 	font-size: 18px;
@@ -101,12 +132,8 @@ body {
 	padding-right: 0;
 	padding-left: 0;
 }
-p {
-	/*text-align: justify;*/
-}
 .splash {
 	background-color: #383838;
-	/*background-color: #337ab7;*/
 	padding: .2em .6em .3em;
 	font-size: 75%;
 	font-weight: bold;
@@ -114,7 +141,6 @@ p {
 	color: #fff;
 	text-align: center;
 	vertical-align: baseline;
-	border-radius: .25em;
 	max-width: 1000px;
 	padding-right: 0;
 	padding-left: 0;
@@ -135,7 +161,7 @@ p {
 	}
 }
 .sticky {
-	top: 51px;
+	top: 50px;
 	position: fixed;
   	z-index: 1000;
 }
@@ -206,6 +232,5 @@ td {
 }
 .bio-info {
 	text-align: left;
-	/*width: 200px;*/
 }
 
