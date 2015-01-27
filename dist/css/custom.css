@@ -99,7 +99,8 @@ body {
 }
 .navbar-default {
 	background-color: #383838;
-	border: 0px;
+	border-bottom: 0px;
+	box-shadow: 0 1px 0 rgba(0,0,0,.4);
 }
 #navbar {
 	float: right;
@@ -170,7 +171,6 @@ body {
 	position: fixed;
   	z-index: 1000;
 }
-
 /*Vertically centers images within Bootstrap columns*/
 .vcenter {
 	display: inline-block;
