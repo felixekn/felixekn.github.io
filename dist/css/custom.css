@@ -30,6 +30,12 @@ body {
 	width: 26px;
 	height: 10px;
 }
+@media (max-width: 768px) {
+	.carousel-indicators {
+		display: none;
+	}
+}
+
 .text {
 	padding: 20px;
 	padding-top: 1px;
