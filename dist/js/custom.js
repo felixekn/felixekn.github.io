@@ -20,8 +20,9 @@ $(window).resize(function() {
 });
 
 // Splash banner sticks below nav when the splash banner is scrolled past the nav
+//  Will not stick splash banner on mobile or when screen size is reduced to mobile size
 $(window).scroll(function() {
-    if ($(window).width() > 768 || !slide) {
+    if ($(window).width() > 768 || !slide) { 
         if (($(window).scrollTop() >= (splash_from_top - nav_height)) && slide) {
             $('.splash').addClass('sticky');
         	$('.text').animate({marginTop: "+=" + splash_height}, 0);
