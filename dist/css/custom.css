@@ -248,4 +248,15 @@ td {
 .bio-info {
 	text-align: left;
 }
-
+.ravi_secret {
+	height: 200px;
+	width: 200px;
+	border-radius: 6px;
+	overflow: hidden;
+}
+.ravi_hidden:hover,
+.ravi_hidden:active,
+.ravi_hidden:focus {
+	content:url("../../Images/News/Ravi_shoots.jpg");
+	width: 200px;
+}
