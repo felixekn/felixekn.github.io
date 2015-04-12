@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  -webkit-user-select: none;
+  /* Chrome/Safari */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* IE10+ */
+  -o-user-select: none;
+  user-select: none; }
+  body .title {
+    background-color: red;
+    font-family: 'Lobster', cursive;
+    font-size: 10vmin;
+    color: white;
+    text-shadow: 0.5vmin 0.5vmin #ccc;
+    text-align: center; }
+  body .data {
+    margin: 10px 10px 10px 10px; }
+    body .data #cont {
+      position: relative;
+      height: 40vmin;
+      width: 40vmin;
+      margin: auto;
+      border-radius: 100%;
+      text-align: center; }
+      body .data #cont .text-wrapper {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: flex;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        -ms-justify-content: center;
+        justify-content: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        -ms-align-items: center;
+        align-items: center;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column; }
+        body .data #cont .text-wrapper .total-beer-text {
+          text-transform: uppercase;
+          font-size: 4vmin;
+          font-family: 'Yanone Kaffeesatz', sans-serif; }
+        body .data #cont .text-wrapper .percent::after {
+          content: attr(data-pct) "%";
+          font-size: 10vmin;
+          font-weight: bold;
+          font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; }
+      body .data #cont #svg {
+        height: 100%;
+        width: 100%; }
+      body .data #cont #svg circle {
+        stroke-dashoffset: 0;
+        transition: stroke-dashoffset 1s linear;
+        stroke: #ccc;
+        stroke-width: 1.5em; }
+      body .data #cont #svg #bar {
+        stroke: red; }
+      body .data #cont #bar {
+        -ms-transform-origin: 50% 50%;
+        /* Rotation around center axis */
+        -webkit-transform-origin: 50% 50%;
+        /* Rotation around center axis */
+        transform-origin: 50% 50%;
+        /* Rotation around center axis */
+        -ms-transform: rotate(-90deg);
+        /* IE 9 */
+        -webkit-transform: rotate(-90deg);
+        /* Chrome, Safari, Opera */
+        transform: rotate(-90deg); }
+    body .data .beer-quant-warpper {
+      position: relative;
+      padding: 0 0 20px 0; }
+      body .data .beer-quant-warpper .average {
+        position: absolute;
+        height: 100%;
+        border-right: 0.5vmin dashed #888;
+        margin: 0 3vmin 3vmin 50vw; }
+        body .data .beer-quant-warpper .average:after {
+          content: "Average";
+          position: absolute;
+          bottom: 0px;
+          right: -0.5vmin;
+          background-color: #888;
+          color: #FFF;
+          padding: 4px 8px 4px 8px; }
+      body .data .beer-quant-warpper .bar-wrap {
+        margin-top: 10px;
+        margin-bottom: 10px; }
+        body .data .beer-quant-warpper .bar-wrap .bar {
+          position: relative;
+          height: 10vmin;
+          width: calc(100%-10px);
+          font-size: 3vmin;
+          line-height: 10vmin;
+          padding-left: 10px;
+          margin: 0 10px 10px 0;
+          font-family: sans-serif;
+          color: white; }
+        body .data .beer-quant-warpper .bar-wrap .bar::before {
+          content: '';
+          width: 100%;
+          position: absolute;
+          left: 0;
+          height: 100%;
+          top: 0;
+          z-index: -2;
+          background: #ecf0f1; }
+        body .data .beer-quant-warpper .bar-wrap .bar::after {
+          content: attr(beer-tot) " Beers";
+          padding-right: 10px;
+          text-align: right;
+          background: #2ecc71;
+          line-height: 10vmin;
+          height: 100%;
+          transition: 0.7s;
+          display: block;
+          width: 100%;
+          -webkit-animation: bar-before 1 1.8s;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1; }
+        body .data .beer-quant-warpper .bar-wrap .bar1::after {
+          max-width: 75%; }
+        body .data .beer-quant-warpper .bar-wrap .bar2::after {
+          max-width: 60%; }
+        body .data .beer-quant-warpper .bar-wrap .bar3::after {
+          max-width: 48%; }
+        body .data .beer-quant-warpper .bar-wrap .bar4::after {
+          max-width: 40%; }
+@-webkit-keyframes bar-before {
+  0% {
+    width: 0px; }
+  100% {
+    width: 100%; } }
+
+/*# sourceMappingURL=style.css.map */
