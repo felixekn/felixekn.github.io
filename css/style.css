@@ -10,7 +10,8 @@ body {
   -ms-user-select: none;
   /* IE10+ */
   -o-user-select: none;
-  user-select: none; }
+  user-select: none;
+  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; }
   body .header {
     position: relative;
     background-color: red;
@@ -99,7 +100,7 @@ body {
         border-right: 0.5vmin dashed #888;
         margin: 0 3vmin 3vmin 50vw; }
         body .data .beer-quant-warpper .average:after {
-          content: "Average";
+          content: "Average: 14 Beers";
           position: absolute;
           bottom: 0px;
           right: -0.5vmin;
