@@ -1,7 +1,10 @@
 $(document).ready(function(){
-  $('#cont').on('click', function(){
-    var oldVal = $('.percent').attr('data-pct');
-    var val = parseInt(Math.floor(Math.random() * 100));
+  function drawGraph(initial) {
+    var val = initial;
+    if (isNaN(initial)) {
+      val = parseInt(Math.floor(Math.random() * 100));
+    }
+    var oldVal = $('.percent').attr('data-pct');  
     var $circle = $('#svg #bar');
     var r = $circle.attr('r');
     var c = Math.PI*(r*2);
@@ -35,5 +38,10 @@ $(document).ready(function(){
       }
     }
     count(oldVal, val);
+  }
+
+  drawGraph(79);
+  $('#cont').on('click', function(){
+    drawGraph(); 
   });
 });

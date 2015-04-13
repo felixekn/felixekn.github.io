@@ -11,13 +11,25 @@ body {
   /* IE10+ */
   -o-user-select: none;
   user-select: none; }
-  body .title {
+  body .header {
+    position: relative;
     background-color: red;
     font-family: 'Lobster', cursive;
     font-size: 10vmin;
     color: white;
     text-shadow: 0.5vmin 0.5vmin #ccc;
     text-align: center; }
+    body .header .user {
+      position: absolute;
+      top: calc(50% - 3vmin / 2 - 6px);
+      left: 10px;
+      border: 0.1em solid white;
+      padding: 4px 10px 2px 10px;
+      font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+      text-shadow: none;
+      font-size: 3vmin;
+      color: white;
+      cursor: pointer; }
   body .data {
     margin: 10px 10px 10px 10px; }
     body .data #cont {
@@ -120,7 +132,7 @@ body {
           content: attr(beer-tot) " Beers";
           padding-right: 10px;
           text-align: right;
-          background: #2ecc71;
+          background: #00ccff;
           line-height: 10vmin;
           height: 100%;
           transition: 0.7s;
@@ -139,6 +151,8 @@ body {
           max-width: 48%; }
         body .data .beer-quant-warpper .bar-wrap .bar4::after {
           max-width: 40%; }
+        body .data .beer-quant-warpper .bar-wrap .bar6::after {
+          max-width: 55%; }
 @-webkit-keyframes bar-before {
   0% {
     width: 0px; }
