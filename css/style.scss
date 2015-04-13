@@ -42,9 +42,9 @@ body{
 		position: relative;
 		background-color: red;
 		font-family: 'Lobster', cursive;
-		font-size: 10vmin;
+		font-size: 12vmin;
 		color: white;
-		text-shadow: 0.5vmin 0.5vmin #ccc;	
+		text-shadow: 0.6vmin 0.6vmin #ccc;	
 		text-align: center;
 		.user {
 			position: absolute;
@@ -63,8 +63,8 @@ body{
 		margin: 10px 10px 10px 10px;
 		#cont {
 			position: relative;
-			height: 40vmin;
-			width: 40vmin;
+			height: 55vmin;
+			width: 55vmin;
 			margin: auto;
 			border-radius: 100%;
 			text-align: center;
@@ -78,12 +78,12 @@ body{
 				@include flex-direction(column);
 				.total-beer-text {
 					text-transform: uppercase;
-					font-size: 4vmin;
+					font-size: 6vmin;
 					font-family: 'Yanone Kaffeesatz', sans-serif;
 				}
 				.percent::after {
 					content: attr(data-pct)"%";
-					font-size: 10vmin;
+					font-size: 14vmin;
 					font-weight: bold;
 					font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
 				}
@@ -122,10 +122,10 @@ body{
 			      content: "Average: 14 Beers";
 			      position: absolute; 
 			      text-align: center;
-			      width: 15vmin;
+			      width: 20vmin;
 			      bottom: -5vmin; 
 			      right: -0.5vmin;
-			      font-size: 3vmin;
+			      font-size: 4vmin;
 			      background-color: #888; color: #FFF;
 			      padding: 0.5vmin;
 				}
@@ -137,7 +137,7 @@ body{
 					position: relative;
 					height: 10vmin;
 					width: calc(100%-10px);
-					font-size: 3vmin;
+					font-size: 4.5vmin;
 					line-height: 10vmin;
 					padding-left: 10px;
 					margin: 0 10px 10px 0;

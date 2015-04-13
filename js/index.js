@@ -40,7 +40,7 @@ $(document).ready(function(){
     count(oldVal, val);
   }
 
-  drawGraph(79);
+  drawGraph(100);
   $('#cont').on('click', function(){
     drawGraph(); 
   });
