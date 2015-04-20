@@ -46,7 +46,7 @@ $(document).ready(function(){
   function actualizeBeerduino() {
     $('.login-wrapper').css("display", "none");
     $('.data').css("display", "block");
-    $('nav').css("opacity", "1");
+    $('.user').text("Felix $$").css("opacity", "1");
     // For testing purposes
     // py needs a getBAC(user) function -----------
     drawGraph(79);
@@ -67,7 +67,36 @@ $(document).ready(function(){
       return "";
   }
 
+  function deleteCookie(cname) {
+    // Does not take in input--Currently hard coded
+    document.cookie = 'ID=FELIXEKN; expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+  }
+
+  function menuShow() {
+    $('.user-pop-up-wrapper').css("display", "block");
+  }
+
+  function menuHide() {
+    if ($('.user-pop-up-wrapper').css("display") == 'block') {
+      $('.user-pop-up-wrapper').css("display", "none");
+    }
+  }
+
   //-------Handles login---------
+  function login() {
+    // -----------py needs getUser($('.ID').val()) function-----------------
+    if ($('.ID').val().toUpperCase() == "FELIXEKN") {
+      actualizeBeerduino();
+      var d = new Date();
+      d.setTime(d.getTime() + (1*24*60*60*1000));
+      var expires = "expires="+d.toUTCString();
+      document.cookie="ID=FELIXEKN";
+    }
+    else {
+      $('.ID').val("")
+      $('.ID').attr("placeholder", "Already too drunk?");
+    }
+  }
 
   // Checks for applicable cookie login
   (function() {
@@ -77,24 +106,24 @@ $(document).ready(function(){
     }
   })();
 
-  // Login for when no cookie is found
-  $('.login .title').on('click', function() {
-    // -----------py needs getUser($('.ID').val()) function-----------------
-    if ($('.ID').val().toUpperCase() == "FELIXEKN") {
-      actualizeBeerduino();
-      var d = new Date();
-      d.setTime(d.getTime() + (1*24*60*60*1000));
-      var expires = "expires="+d.toUTCString();
-      document.cookie="ID=FELIXEKN";
-      console.log(document.cookie);
-    }
-    else {
-      $('.ID').val("")
-      $('.ID').attr("placeholder", "Already too drunk?");
+  // // Login listeners for when no user cookie is found--------------
+  $(".ID").keyup(function(event) {
+    if(event.keyCode == 13){
+      login();   
     }
   });
-  // Navigation Menu
-  $(".toggle").click(function() {
-    $( ".menu" ).stop().slideToggle( "slow" );
+  $('.login .title').on('click', function() {
+    login();
+  });
+  $('.user').on('click', function() {
+    menuShow();
+    event.stopPropagation();
+  });
+  $('html').click(function() {
+    menuHide();
+  });
+  $('#logout').on('click', function() {
+    deleteCookie('dummyVar');
+    location.reload();
   });
 });
