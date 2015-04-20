@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+
+  // Draws circle graph
   function drawGraph(initial) {
     var val = initial;
     if (isNaN(initial)) {
@@ -40,8 +43,58 @@ $(document).ready(function(){
     count(oldVal, val);
   }
 
-  drawGraph(79);
-  $('#cont').on('click', function(){
-    drawGraph(); 
+  function actualizeBeerduino() {
+    $('.login-wrapper').css("display", "none");
+    $('.data').css("display", "block");
+    $('nav').css("opacity", "1");
+    // For testing purposes
+    // py needs a getBAC(user) function -----------
+    drawGraph(79);
+    $('#cont').on('click', function(){
+      drawGraph(); 
+    });
+  }
+
+  // Parses cookie
+  function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+      for(var i=0; i<ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0)==' ') c = c.substring(1);
+          if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+      }
+      return "";
+  }
+
+  //-------Handles login---------
+
+  // Checks for applicable cookie login
+  (function() {
+    var user = getCookie("ID");
+    if (user != "") {
+        actualizeBeerduino();
+    }
+  })();
+
+  // Login for when no cookie is found
+  $('.login .title').on('click', function() {
+    // -----------py needs getUser($('.ID').val()) function-----------------
+    if ($('.ID').val().toUpperCase() == "FELIXEKN") {
+      actualizeBeerduino();
+      var d = new Date();
+      d.setTime(d.getTime() + (1*24*60*60*1000));
+      var expires = "expires="+d.toUTCString();
+      document.cookie="ID=FELIXEKN";
+      console.log(document.cookie);
+    }
+    else {
+      $('.ID').val("")
+      $('.ID').attr("placeholder", "Already too drunk?");
+    }
+  });
+  // Navigation Menu
+  $(".toggle").click(function() {
+    $( ".menu" ).stop().slideToggle( "slow" );
   });
 });

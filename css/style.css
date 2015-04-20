@@ -2,6 +2,15 @@
   margin: 0;
   padding: 0; }
 
+html {
+  font-size: 17px; }
+
+@media (max-width: 900px) {
+  html {
+    font-size: 19px; } }
+@media (max-width: 500px) {
+  html {
+    font-size: 12px; } }
 body {
   -webkit-user-select: none;
   /* Chrome/Safari */
@@ -16,147 +25,189 @@ body {
     position: relative;
     background-color: red;
     font-family: 'Lobster', cursive;
-    font-size: 12vmin;
+    font-size: 4em;
     color: white;
-    text-shadow: 0.6vmin 0.6vmin #ccc;
+    text-shadow: 0.05em 0.05em #ccc;
     text-align: center; }
+    body .header nav {
+      opacity: 0;
+      transition: opacity 0.7s ease; }
+    body .header nav[role="navigation"] a {
+      color: #fff;
+      text-decoration: none; }
+    body .header nav[role="navigation"] li {
+      width: calc(100% - 0.3em);
+      background: red;
+      border-bottom: 0.15em solid white;
+      border-right: 0.15em solid white;
+      border-left: 0.15em solid white; }
+    body .header nav[role="navigation"] span {
+      font-size: 1.1em; }
+    body .header .toggle {
+      border: 0.15em solid white;
+      padding: 0.1em 0.5em 0.1em 0.5em;
+      color: #fff; }
+    body .header .menu {
+      display: none; }
     body .header .user {
       position: absolute;
-      top: calc(50% - 3vmin / 2 - 6px);
-      left: 10px;
-      border: 0.1em solid white;
-      padding: 4px 10px 2px 10px;
+      top: calc(50% - (0.25em / 2) - 0.6em);
+      left: 0.5em;
       font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
       text-shadow: none;
-      font-size: 3vmin;
+      font-size: 0.25em;
       color: white;
       cursor: pointer; }
-  body .data {
-    margin: 10px 10px 10px 10px; }
-    body .data #cont {
+  body .view-window {
+    margin: auto;
+    max-width: 600px; }
+    body .view-window .login-wrapper {
       position: relative;
-      height: 55vmin;
-      width: 55vmin;
-      margin: auto;
-      border-radius: 100%;
+      top: 10em;
       text-align: center; }
-      body .data #cont .text-wrapper {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        display: -webkit-flex;
-        display: -moz-flex;
-        display: -ms-flex;
-        display: flex;
-        -webkit-justify-content: center;
-        -moz-justify-content: center;
-        -ms-justify-content: center;
-        justify-content: center;
-        -webkit-align-items: center;
-        -moz-align-items: center;
-        -ms-align-items: center;
-        align-items: center;
-        -webkit-flex-direction: column;
-        -moz-flex-direction: column;
-        -ms-flex-direction: column;
-        flex-direction: column; }
-        body .data #cont .text-wrapper .total-beer-text {
-          text-transform: uppercase;
-          font-size: 6vmin;
-          font-family: 'Yanone Kaffeesatz', sans-serif; }
-        body .data #cont .text-wrapper .percent::after {
-          content: attr(data-pct) "%";
-          font-size: 14vmin;
-          font-weight: bold;
-          font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; }
-      body .data #cont #svg {
-        height: 100%;
-        width: 100%; }
-      body .data #cont #svg circle {
-        stroke-dashoffset: 0;
-        transition: stroke-dashoffset 1s linear;
-        stroke: #ccc;
-        stroke-width: 1.5em; }
-      body .data #cont #svg #bar {
-        stroke: red; }
-      body .data #cont #bar {
-        -ms-transform-origin: 50% 50%;
-        /* Rotation around center axis */
-        -webkit-transform-origin: 50% 50%;
-        /* Rotation around center axis */
-        transform-origin: 50% 50%;
-        /* Rotation around center axis */
-        -ms-transform: rotate(-90deg);
-        /* IE 9 */
-        -webkit-transform: rotate(-90deg);
-        /* Chrome, Safari, Opera */
-        transform: rotate(-90deg); }
-    body .data .beer-quant-warpper {
-      position: relative;
-      padding: 0 0 20px 0; }
-      body .data .beer-quant-warpper .average {
-        position: absolute;
-        height: 100%;
-        border-right: 0.5vmin dashed #888;
-        margin: 0 0 0 53vw; }
-        body .data .beer-quant-warpper .average:after {
-          content: "Average: 14 Beers";
+      body .view-window .login-wrapper .login {
+        display: inline-block;
+        border-radius: 0.2em;
+        overflow: hidden; }
+        body .view-window .login-wrapper .login .title {
+          color: gray;
+          font-size: 2em;
+          text-align: left;
+          cursor: pointer; }
+        body .view-window .login-wrapper .login input {
+          border: 0;
+          font-size: 2em;
+          border-bottom: 0.05em solid #B9C1CA; }
+          body .view-window .login-wrapper .login input:focus {
+            outline: none;
+            box-shadow: none; }
+    body .view-window .data {
+      display: none;
+      margin: 10px 10px 10px 10px; }
+      body .view-window .data #cont {
+        position: relative;
+        height: 17em;
+        width: 17em;
+        margin: auto;
+        border-radius: 100%;
+        text-align: center; }
+        body .view-window .data #cont .text-wrapper {
           position: absolute;
-          text-align: center;
-          width: 20vmin;
-          bottom: -5vmin;
-          right: -0.5vmin;
-          font-size: 4vmin;
-          background-color: #888;
-          color: #FFF;
-          padding: 0.5vmin; }
-      body .data .beer-quant-warpper .bar-wrap {
-        margin-top: 10px;
-        margin-bottom: 10px; }
-        body .data .beer-quant-warpper .bar-wrap .bar {
-          position: relative;
-          height: 10vmin;
-          width: calc(100%-10px);
-          font-size: 4.5vmin;
-          line-height: 10vmin;
-          padding-left: 10px;
-          margin: 0 10px 10px 0;
-          font-family: sans-serif;
-          color: white; }
-        body .data .beer-quant-warpper .bar-wrap .bar::before {
-          content: '';
-          width: 100%;
-          position: absolute;
-          left: 0;
           height: 100%;
-          top: 0;
-          z-index: -2;
-          background: #ecf0f1; }
-        body .data .beer-quant-warpper .bar-wrap .bar::after {
-          content: attr(beer-tot) " Beers";
-          padding-right: 10px;
-          text-align: right;
-          background: #00ccff;
-          line-height: 10vmin;
-          height: 100%;
-          transition: 0.7s;
-          display: block;
           width: 100%;
-          -webkit-animation: bar-before 1 1.8s;
+          display: -webkit-flex;
+          display: -moz-flex;
+          display: -ms-flex;
+          display: flex;
+          -webkit-justify-content: center;
+          -moz-justify-content: center;
+          -ms-justify-content: center;
+          justify-content: center;
+          -webkit-align-items: center;
+          -moz-align-items: center;
+          -ms-align-items: center;
+          align-items: center;
+          -webkit-flex-direction: column;
+          -moz-flex-direction: column;
+          -ms-flex-direction: column;
+          flex-direction: column; }
+          body .view-window .data #cont .text-wrapper .total-beer-text {
+            text-transform: uppercase;
+            font-size: 1.7em;
+            font-family: 'Yanone Kaffeesatz', sans-serif; }
+          body .view-window .data #cont .text-wrapper .percent::after {
+            content: attr(data-pct) "%";
+            font-size: 4em;
+            font-weight: bold;
+            font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif; }
+        body .view-window .data #cont #svg {
+          height: 100%;
+          width: 100%; }
+        body .view-window .data #cont #svg circle {
+          stroke-dashoffset: 0;
+          transition: stroke-dashoffset 1s linear;
+          stroke: #ccc;
+          stroke-width: 1.5em; }
+        body .view-window .data #cont #svg #bar {
+          stroke: red; }
+        body .view-window .data #cont #bar {
+          -ms-transform-origin: 50% 50%;
+          /* Rotation around center axis */
+          -webkit-transform-origin: 50% 50%;
+          /* Rotation around center axis */
+          transform-origin: 50% 50%;
+          /* Rotation around center axis */
+          -ms-transform: rotate(-90deg);
+          /* IE 9 */
+          -webkit-transform: rotate(-90deg);
+          /* Chrome, Safari, Opera */
+          transform: rotate(-90deg); }
+      body .view-window .data .beer-quant-warpper {
+        position: relative;
+        padding: 1.5em 0 0 0; }
+        body .view-window .data .beer-quant-warpper .average {
           position: absolute;
-          top: 0;
-          left: 0;
-          z-index: -1; }
-        body .data .beer-quant-warpper .bar-wrap .bar1::after {
-          max-width: 75%; }
-        body .data .beer-quant-warpper .bar-wrap .bar2::after {
-          max-width: 60%; }
-        body .data .beer-quant-warpper .bar-wrap .bar3::after {
-          max-width: 48%; }
-        body .data .beer-quant-warpper .bar-wrap .bar4::after {
-          max-width: 40%; }
-        body .data .beer-quant-warpper .bar-wrap .bar6::after {
-          max-width: 55%; }
+          height: 100%;
+          border-right: 0.2em dashed #888;
+          margin-left: calc(29.263157894736842em / 2); }
+          body .view-window .data .beer-quant-warpper .average:after {
+            content: "Average: " attr(data-pct) " Beers";
+            position: absolute;
+            text-align: center;
+            white-space: nowrap;
+            bottom: 0;
+            right: -0.2em;
+            font-size: 1em;
+            background-color: #888;
+            color: #FFF;
+            padding: 0.1em 0.2em 0.1em 0.2em; }
+        body .view-window .data .beer-quant-warpper .bar-wrap {
+          margin-top: 10px;
+          margin-bottom: 10px; }
+          body .view-window .data .beer-quant-warpper .bar-wrap .bar {
+            position: relative;
+            height: 2.2em;
+            width: calc(100%-10px);
+            font-size: 1.35em;
+            line-height: 2.2em;
+            padding-left: 10px;
+            margin: 0 0 10px 0;
+            font-family: sans-serif;
+            color: white; }
+          body .view-window .data .beer-quant-warpper .bar-wrap .bar::before {
+            content: '';
+            width: 100%;
+            position: absolute;
+            left: 0;
+            height: 100%;
+            top: 0;
+            z-index: -2;
+            background: #ecf0f1; }
+          body .view-window .data .beer-quant-warpper .bar-wrap .bar::after {
+            content: attr(beer-tot) " Beers";
+            padding-right: 10px;
+            text-align: right;
+            background: #00ccff;
+            line-height: 2.2em;
+            height: 100%;
+            transition: 0.7s;
+            display: block;
+            width: 100%;
+            -webkit-animation: bar-before 1 1.8s;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1; }
+          body .view-window .data .beer-quant-warpper .bar-wrap .bar1::after {
+            max-width: 75%; }
+          body .view-window .data .beer-quant-warpper .bar-wrap .bar2::after {
+            max-width: 60%; }
+          body .view-window .data .beer-quant-warpper .bar-wrap .bar3::after {
+            max-width: 48%; }
+          body .view-window .data .beer-quant-warpper .bar-wrap .bar4::after {
+            max-width: 40%; }
+          body .view-window .data .beer-quant-warpper .bar-wrap .bar6::after {
+            max-width: 40%; }
 @-webkit-keyframes bar-before {
   0% {
     width: 0px; }

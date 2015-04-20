@@ -1,5 +1,6 @@
 // $barColor: #2ecc71;
 $barColor: rgb(0, 204, 255);
+$login-background: rgb(255, 50, 162);
 
 @mixin flex() {
 	display: -webkit-flex;
@@ -31,6 +32,16 @@ $barColor: rgb(0, 204, 255);
 	margin: 0;
 	padding: 0;
 }
+
+html {
+  font-size: 17px;
+}
+@media (max-width: 900px) {
+  html { font-size: 19px; }
+}
+@media (max-width: 500px) {
+  html { font-size: 12px; }
+}
 body{
 	-webkit-user-select: none; /* Chrome/Safari */        
     -moz-user-select: none; /* Firefox */
@@ -38,160 +49,215 @@ body{
     -o-user-select: none;
     user-select: none;
     font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-	.header {
+    .header {
 		position: relative;
 		background-color: red;
 		font-family: 'Lobster', cursive;
-		font-size: 12vmin;
+		font-size: 4em;//12vmin;
 		color: white;
-		text-shadow: 0.6vmin 0.6vmin #ccc;	
+		text-shadow: 0.05em 0.05em #ccc;//0.6vmin 0.6vmin #ccc;	
 		text-align: center;
+		nav {
+			opacity: 0;
+			transition: opacity 0.7s ease;
+		}
+		nav[role="navigation"] a {
+			color: #fff;
+			text-decoration: none;
+		}
+		nav[role="navigation"] li {
+			width: calc(100% - 0.3em);
+			background: red; //#bdc3c7; 
+			border-bottom: 0.15em solid white;
+			border-right: 0.15em solid white;
+			border-left: 0.15em solid white;
+		}
+		nav[role="navigation"] span {
+			font-size: 1.1em;
+		}
+		.toggle {
+			border: 0.15em solid white;
+			padding: 0.1em 0.5em 0.1em 0.5em;//4px 10px 2px 10px;
+			color: #fff;	
+		}
+		.menu {display: none;}
+
 		.user {
 			position: absolute;
-			top: calc(50% - 3vmin / 2 - 6px);
-			left: 10px;
-			border: 0.1em solid white;
-			padding: 4px 10px 2px 10px;
+			top: calc(50% - (0.25em / 2) - 0.6em);
+			left: 0.5em;
 			font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
 			text-shadow: none;	
-			font-size: 3vmin;
+			font-size: 0.25em;
 			color: white;
 			cursor: pointer;
 		}
 	}
-	.data { 
-		margin: 10px 10px 10px 10px;
-		#cont {
+    .view-window {
+    	margin: auto;
+    	max-width: 600px;
+		.login-wrapper {
 			position: relative;
-			height: 55vmin;
-			width: 55vmin;
-			margin: auto;
-			border-radius: 100%;
-			text-align: center;
-			.text-wrapper {
-				position: absolute;
-				height: 100%;
-				width: 100%;
-				@include flex();
-				@include flexHCenter();
-				@include flexVCenter();
-				@include flex-direction(column);
-				.total-beer-text {
-					text-transform: uppercase;
-					font-size: 6vmin;
-					font-family: 'Yanone Kaffeesatz', sans-serif;
-				}
-				.percent::after {
-					content: attr(data-pct)"%";
-					font-size: 14vmin;
-					font-weight: bold;
-					font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
-				}
-			}
-			#svg {
-				height: 100%;
-				width: 100%;
-			}
-			#svg circle {
-	  			stroke-dashoffset: 0;
-	  			transition: stroke-dashoffset 1s linear;
-	  			stroke: #ccc;
-	  			stroke-width: 1.5em;
-			}
-			#svg #bar {
-	  			stroke: red;
-			}
-			#bar {
-				-ms-transform-origin: 50% 50%; /* Rotation around center axis */
-				-webkit-transform-origin: 50% 50%; /* Rotation around center axis */
-				transform-origin: 50% 50%; /* Rotation around center axis */
-				-ms-transform: rotate(-90deg); /* IE 9 */
-			    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
-			    transform: rotate(-90deg);
-			}
-		}
-		.beer-quant-warpper {
-			position: relative; 
-  			padding: 0 0 20px 0; 
-			.average {
-			    position: absolute; 
-			    height: 100%;
-			    border-right: 0.5vmin dashed #888;
-			    margin: 0 0 0 53vw;
-	    		&:after{
-			      content: "Average: 14 Beers";
-			      position: absolute; 
-			      text-align: center;
-			      width: 20vmin;
-			      bottom: -5vmin; 
-			      right: -0.5vmin;
-			      font-size: 4vmin;
-			      background-color: #888; color: #FFF;
-			      padding: 0.5vmin;
-				}
-			}
-			.bar-wrap {
-				margin-top: 10px;
-				margin-bottom: 10px;
-				.bar{
-					position: relative;
-					height: 10vmin;
-					width: calc(100%-10px);
-					font-size: 4.5vmin;
-					line-height: 10vmin;
-					padding-left: 10px;
-					margin: 0 10px 10px 0;
-					font-family: sans-serif;
-					color: white;
-					
-				}
-				.bar::before{
-					content: '';
-					width: 100%;
+    		top: 10em;
+    		text-align: center;
+    		.login {
+    			display: inline-block;
+    			border-radius: 0.2em;
+    			overflow: hidden;
+    			.title {
+    				color: gray;
+    				font-size: 2em;
+    				text-align: left;
+    				cursor: pointer;
+    			}
+    			input {
+    				border:0;
+    				font-size: 2em;
+    				border-bottom:0.05em solid #B9C1CA;
+    				&:focus {
+    					outline:none;
+						box-shadow:none;
+    				}
+    			}
+    		}
+    	}
+
+
+		.data {
+			display: none;
+			margin: 10px 10px 10px 10px;
+			#cont {
+				position: relative;
+				height: 17em;//55vmin;
+				width: 17em;//55vmin;
+				margin: auto;
+				border-radius: 100%;
+				text-align: center;
+				.text-wrapper {
 					position: absolute;
-					left: 0;
 					height: 100%;
-					top: 0;
-					z-index: -2;
-					background: #ecf0f1;
-				}
-				.bar::after{
-					content: attr(beer-tot)" Beers";
-					padding-right: 10px;
-					text-align: right;
-					background: $barColor;
-					line-height: 10vmin;
-					height: 100%;
-					transition: 0.7s;
-					display: block;
 					width: 100%;
-					-webkit-animation: bar-before 1 1.8s;
-					position: absolute;
-					top: 0;
-					left: 0;
-					z-index: -1;
+					@include flex();
+					@include flexHCenter();
+					@include flexVCenter();
+					@include flex-direction(column);
+					.total-beer-text {
+						text-transform: uppercase;
+						font-size: 1.7em;//6vmin;
+						font-family: 'Yanone Kaffeesatz', sans-serif;
+					}
+					.percent::after {
+						content: attr(data-pct)"%";
+						font-size: 4em;//14vmin;
+						font-weight: bold;
+						font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+					}
 				}
-				.bar1::after{
-					max-width: 75%;
+				#svg {
+					height: 100%;
+					width: 100%;
 				}
-				.bar2::after{
-					max-width: 60%;
+				#svg circle {
+		  			stroke-dashoffset: 0;
+		  			transition: stroke-dashoffset 1s linear;
+		  			stroke: #ccc;
+		  			stroke-width: 1.5em;
 				}
-				.bar3::after{
-					max-width: 48%;
+				#svg #bar {
+		  			stroke: red;
 				}
-				.bar4::after{
-					max-width: 40%;
+				#bar {
+					-ms-transform-origin: 50% 50%; /* Rotation around center axis */
+					-webkit-transform-origin: 50% 50%; /* Rotation around center axis */
+					transform-origin: 50% 50%; /* Rotation around center axis */
+					-ms-transform: rotate(-90deg); /* IE 9 */
+				    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+				    transform: rotate(-90deg);
 				}
-				.bar6::after{
-					max-width: 55%;
+			}
+			.beer-quant-warpper {
+				position: relative; 
+	  			padding: 1.5em 0 0 0; 
+				.average {
+				    position: absolute; 
+				    height: 100%;
+				    border-right: 0.2em dashed #888;
+				    margin-left: calc(29.263157894736842em / 2);
+		    		&:after{
+				      content: "Average: "attr(data-pct)" Beers";
+				      position: absolute; 
+				      text-align: center;
+				      white-space:nowrap;
+				      bottom: 0; 
+				      right: -0.2em;
+				      font-size: 1em;
+				      background-color: #888; color: #FFF;
+				      padding: 0.1em 0.2em 0.1em 0.2em;
+					}
 				}
-				@-webkit-keyframes bar-before{
-					0%{
-				    	width: 0px;
-				  	}
-					100%{
-				    	width: 100%;
+				.bar-wrap {
+					margin-top: 10px;
+					margin-bottom: 10px;
+					.bar{
+						position: relative;
+						height: 2.2em;//10vmin;
+						width: calc(100%-10px);
+						font-size: 1.35em;//4.5vmin;
+						line-height: 2.2em;//10vmin;
+						padding-left: 10px;
+						margin: 0 0 10px 0;
+						font-family: sans-serif;
+						color: white;
+						
+					}
+					.bar::before{
+						content: '';
+						width: 100%;
+						position: absolute;
+						left: 0;
+						height: 100%;
+						top: 0;
+						z-index: -2;
+						background: #ecf0f1;
+					}
+					.bar::after{
+						content: attr(beer-tot)" Beers";
+						padding-right: 10px;
+						text-align: right;
+						background: $barColor;
+						line-height: 2.2em;//10vmin;
+						height: 100%;
+						transition: 0.7s;
+						display: block;
+						width: 100%;
+						-webkit-animation: bar-before 1 1.8s;
+						position: absolute;
+						top: 0;
+						left: 0;
+						z-index: -1;
+					}
+					.bar1::after{
+						max-width: 75%;
+					}
+					.bar2::after{
+						max-width: 60%;
+					}
+					.bar3::after{
+						max-width: 48%;
+					}
+					.bar4::after{
+						max-width: 40%;
+					}
+					.bar6::after{
+						max-width: 40%;
+					}
+					@-webkit-keyframes bar-before{
+						0%{
+					    	width: 0px;
+					  	}
+						100%{
+					    	width: 100%;
+						}
 					}
 				}
 			}
