@@ -119,7 +119,7 @@ $(document).ready(function(){
     menuShow();
     event.stopPropagation();
   });
-  $('html').click(function() {
+  $('html').on('click', function() {
     menuHide();
   });
   $('#logout').on('click', function() {
