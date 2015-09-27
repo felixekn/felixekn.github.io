@@ -25,16 +25,20 @@ $font-light: #fff;
 	box-shadow: 1px 1px 5px #000;
 	z-index: 5000;
 }
-.menu .contents {
-	display: flex;
-	width: 1080px;
+.contents {
+	@include display(flex);
+	// @include justify-content(flex-end);
+	box-sizing: border-box;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 1000px;
 	height: 100%;
 	margin: 0 auto;
 }
 .logo-wrapper {
-	display: flex;
+	@include display(flex);
+	@include align-items(center);
 	height: 100%;
-	align-items: center;
 	cursor: pointer;
 }
 .logo {
@@ -59,9 +63,6 @@ nav a {
 nav a,
 nav>span {
 	color: $primary-clr;
-}
-nav {
-	width: 100%;
 }
 nav>ul {
 	padding-left: 2.5px;
