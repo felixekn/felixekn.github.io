@@ -46,15 +46,15 @@ nav ul,
 nav li,
 nav span,
 nav a {
-	display: flex;
+	@include display(flex);
 	height: 100%;
 }
 nav ul,
 nav li,
 nav span,
 nav a {
-  	align-items: center;
-  	justify-content: center;
+  	@include align-items(center);
+  	@include justify-content(center);
 }
 nav a,
 nav>span {
@@ -97,7 +97,8 @@ nav a:hover {
 .hero-image2,
 .hero-image3,
 .hero-image4 {
-	display: flex;
+	@include display(flex);
+	@include align-items(center);
 	height: 100%;
 	width: 100%;
 	font-style: normal;
@@ -105,7 +106,6 @@ nav a:hover {
     line-height: 50px;
     font-weight: 900;
     letter-spacing: -0.025em;
-    align-items: center;
 }
 .hero-image1 {
 	background: url("../../images/examples/image2.jpg") no-repeat center center;
@@ -172,15 +172,15 @@ nav a:hover {
 }
 .about-us p,
 .quality-materials section {
-  opacity: 0;
-  @include transition(all, 500ms, linear);
-  @include transform(translate3d(-100px, 0px, 0px));
+  	opacity: 0;
+  	@include transition(all, 500ms, linear);
+  	@include transform(translate3d(-100px, 0px, 0px));
 }
 
 .about-us p.in-view,
 .quality-materials section.in-view {
-  opacity: 1;
-  @include transform(translate3d(0px, 0px, 0px));
+  	opacity: 1;
+  	@include transform(translate3d(0px, 0px, 0px));
 }
 .quality-materials {
 	text-align: center;

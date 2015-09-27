@@ -38,6 +38,12 @@ nav ul,
 nav li,
 nav span,
 nav a {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
   display: flex;
   height: 100%; }
 
@@ -45,8 +51,24 @@ nav ul,
 nav li,
 nav span,
 nav a {
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
   align-items: center;
-  justify-content: center; }
+  -ms-flex-align: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  box-pack: center;
+  -webkit-justify-content: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  justify-content: center;
+  -ms-flex-pack: center; }
 
 nav a,
 nav > span {
@@ -88,15 +110,29 @@ nav a:hover {
 .hero-image2,
 .hero-image3,
 .hero-image4 {
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
   height: 100%;
   width: 100%;
   font-style: normal;
   font-size: 52px;
   line-height: 50px;
   font-weight: 900;
-  letter-spacing: -0.025em;
-  align-items: center; }
+  letter-spacing: -0.025em; }
 
 .hero-image1 {
   background: url("../../images/examples/image2.jpg") no-repeat center center;

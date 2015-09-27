@@ -4,7 +4,7 @@ $(document).ready(function() {
 		slideSpeed : 300, //miliseconds
 		paginationSpeed : 400, //miliseconds
 		responsiveRefreshRate: 100,
-		// autoPlay : 5000, //miliseconds
+		autoPlay : 5000, //miliseconds
 		singleItem: true
 	});
 	//on-view scroll animation
