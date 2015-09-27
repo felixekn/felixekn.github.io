@@ -236,6 +236,9 @@ nav {
   letter-spacing: 1px;
   color: #064A8E; }
 
+@media (max-width: 1040px) {
+  .about-us p {
+    font-size: 20px; } }
 .materials {
   display: inline-block;
   box-sizing: border-box;
