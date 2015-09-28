@@ -150,17 +150,13 @@ nav {
 	height: 350px;
 	margin: 0 auto;
 }
-.about-us-wrapper {
-	width: 50%;
-	background-color: $nav-clr;
-}
 .about-us {
 	display: inline-block;
 	box-sizing: border-box;
 	padding-bottom: 30px;
-	width: 500px;
 	height: 100%;
-	float: right;
+	width: 50%;
+	background-color: #E9ECEF;
 }
 .about-us h3 {
 	padding-left: 15px;
@@ -179,23 +175,18 @@ nav {
 	max-width: 700px;
 	margin: 0 auto;
 	font-family: "proxima nova", "Arial";
-	font-size: 22px;
+	font-size: 25px;
 	font-weight: 400;
 	line-height: 1;
 	letter-spacing: 1px;
 	color: $primary-clr;
 }
-@media (max-width: 1040px) {
-	.about-us p {font-size: 20px}
-}
-.materials-wrapper {
-	width: 50%;
-}
+@media (max-width: 1040px) {.about-us p {font-size: 20px} }
 .materials {
 	display: inline-block;
 	box-sizing: border-box;
 	height: 100%;
-	width: 500px;
+	width: 50%;
 	text-align: center;
 	color: #252525;
 }
@@ -208,10 +199,10 @@ nav {
 .materials p {
 	padding-bottom: 20px;
 	font-family: "proxima nova", "Arial";
-	font-size: 22px;
+	font-size: 25px;
 	color: $font-dark;
 }
-
+@media (max-width: 1040px) {.materials p {font-size: 20px} }
 .materials section {
 	@include display(flex);
 	@include align-items(center);
@@ -227,15 +218,15 @@ nav {
 		padding-bottom: 15px;
 	}
 }
-.about-us-wrapper,
-.materials-wrapper {
+.about-us,
+.materials {
   	opacity: 0;
   	@include transition(all 500ms linear);
   	@include transform(translate3d(-100px, 0px, 0px));
 }
 
-.about-us-wrapper.in-view,
-.materials-wrapper.in-view {
+.about-us.in-view,
+.materials.in-view {
   	opacity: 1;
   	@include transform(translate3d(0px, 0px, 0px));
 }

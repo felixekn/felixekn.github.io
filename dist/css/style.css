@@ -212,17 +212,13 @@ nav {
   height: 350px;
   margin: 0 auto; }
 
-.about-us-wrapper {
-  width: 50%;
-  background-color: #E9ECEF; }
-
 .about-us {
   display: inline-block;
   box-sizing: border-box;
   padding-bottom: 30px;
-  width: 500px;
   height: 100%;
-  float: right; }
+  width: 50%;
+  background-color: #E9ECEF; }
 
 .about-us h3 {
   padding-left: 15px;
@@ -241,7 +237,7 @@ nav {
   max-width: 700px;
   margin: 0 auto;
   font-family: "proxima nova", "Arial";
-  font-size: 22px;
+  font-size: 25px;
   font-weight: 400;
   line-height: 1;
   letter-spacing: 1px;
@@ -250,14 +246,11 @@ nav {
 @media (max-width: 1040px) {
   .about-us p {
     font-size: 20px; } }
-.materials-wrapper {
-  width: 50%; }
-
 .materials {
   display: inline-block;
   box-sizing: border-box;
   height: 100%;
-  width: 500px;
+  width: 50%;
   text-align: center;
   color: #252525; }
 
@@ -270,9 +263,12 @@ nav {
 .materials p {
   padding-bottom: 20px;
   font-family: "proxima nova", "Arial";
-  font-size: 22px;
+  font-size: 25px;
   color: #4D5763; }
 
+@media (max-width: 1040px) {
+  .materials p {
+    font-size: 20px; } }
 .materials section {
   display: -webkit-box;
   display: -moz-box;
@@ -315,8 +311,8 @@ nav {
     padding-right: 10px;
     padding-bottom: 15px; }
 
-.about-us-wrapper,
-.materials-wrapper {
+.about-us,
+.materials {
   opacity: 0;
   -webkit-transition: all 500ms linear;
   -moz-transition: all 500ms linear;
@@ -327,8 +323,8 @@ nav {
   -o-transform: translate3d(-100px, 0px, 0px);
   transform: translate3d(-100px, 0px, 0px); }
 
-.about-us-wrapper.in-view,
-.materials-wrapper.in-view {
+.about-us.in-view,
+.materials.in-view {
   opacity: 1;
   -webkit-transform: translate3d(0px, 0px, 0px);
   -moz-transform: translate3d(0px, 0px, 0px);
