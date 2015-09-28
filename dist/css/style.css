@@ -110,7 +110,7 @@ nav {
   padding-left: 2.5px;
   padding-right: 2.5px; }
 
-.menu a {
+.menu li a {
   position: relative;
   padding-left: 20px;
   padding-right: 20px;
@@ -118,7 +118,7 @@ nav {
   font-weight: 200;
   text-decoration: none; }
 
-.nav-active, .menu a:hover {
+.nav-active, .menu li a:hover {
   border-top: 5px solid transparent;
   border-bottom: 5px solid #064A8E; }
 
