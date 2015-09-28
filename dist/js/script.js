@@ -8,8 +8,8 @@ $(document).ready(function() {
 		singleItem: true
 	});
 	//on-view scroll animation
-	var $about = $('.about-us');
-	var $materials = $('.materials');
+	var $about = $('.about-us-wrapper');
+	var $materials = $('.materials-wrapper');
 	var $window = $(window);
 	var window_top_position = $window.scrollTop();
 	var element_heights = [$about.outerHeight(),
