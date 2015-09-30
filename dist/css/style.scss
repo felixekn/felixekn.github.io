@@ -32,7 +32,7 @@ nav {
 	box-sizing: border-box;
 	padding-left: 15px;
 	padding-right: 15px;
-	width: 1000px;
+	max-width: 1000px;
 	height: 100%;
 	margin: 0 auto;
 }
@@ -219,6 +219,7 @@ nav {
 		padding-bottom: 15px;
 	}
 }
+// @media (max-width: )
 .about-us,
 .materials {
   	opacity: 0;
@@ -292,7 +293,7 @@ footer p {
 	width: 65%;
 	padding-bottom: 48.75%;
 	position: relative;
-	background: blue;
+	background: $font-dark;
 }
 .responsive-square>iframe {
 	position: absolute;
