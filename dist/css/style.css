@@ -127,7 +127,8 @@ nav {
   height: 100vh; }
 
 #carousel {
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); }
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  z-index: 500; }
 
 #carousel,
 .owl-wrapper-outer,
@@ -349,35 +350,21 @@ footer p {
   padding-top: 10px; }
 
 .main.contact {
-  display: -webkit-box;
-  display: -moz-box;
-  display: box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -moz-box-pack: center;
-  box-pack: center;
-  -webkit-justify-content: center;
-  -moz-justify-content: center;
-  -ms-justify-content: center;
-  -o-justify-content: center;
-  justify-content: center;
-  -ms-flex-pack: center;
+  box-sizing: border-box;
   max-width: 1000px;
+  padding-left: 15px;
+  padding-right: 15px;
   height: 100%;
   padding-top: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 15px;
   margin: 0 auto;
   color: #4D5763; }
 
 .contact > article {
   display: inline-block;
-  width: 400px;
-  height: 500px;
-  padding-left: 15px;
-  padding-right: 15px; }
+  width: 30%;
+  padding-bottom: 15px;
+  vertical-align: top; }
 
 .contact h1 {
   font-size: 25px;
@@ -393,17 +380,39 @@ footer p {
   margin-top: 5px;
   margin-bottom: 2px;
   padding: 4px;
-  border: 1px solid #4D5763;
+  border: 1px solid #009082;
   border-radius: 3px;
-  font-size: 20px !important;
+  font-size: 22px !important;
   color: #fff;
-  background-color: #4D5763; }
+  background-color: #009082; }
 
-.google-maps {
+.responsive-square {
   display: inline-block;
-  padding-left: 15px;
-  padding-right: 15px;
+  width: 65%;
+  padding-bottom: 48.75%;
+  position: relative;
+  background: blue; }
+
+.responsive-square > iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%; }
+
+@media (max-width: 850px) {
+  .contact > article {
+    width: 100%; }
+
+  .responsive-square {
+    width: 100%;
+    padding-bottom: 45%; } }
+@media (max-width: 510px) {
+  .contact > article {
+    width: 100%; }
+
+  .responsive-square {
+    width: 100%;
+    padding-bottom: 75%; } }
 
 /*# sourceMappingURL=style.css.map */

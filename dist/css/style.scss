@@ -93,7 +93,8 @@ nav {
 	height: 100vh;
 }
 #carousel {
-	box-shadow: 1px 1px 5px rgba(0,0,0, 0.3);
+	box-shadow: 1px 1px 5px rgba(0,0,0, 0.5);
+	z-index: 500;
 }
 #carousel,
 .owl-wrapper-outer,
@@ -250,21 +251,21 @@ footer p {
 
 //contact page
 .main.contact {
-	@include display(flex);
-	@include justify-content(center);
+	box-sizing: border-box;
 	max-width: 1000px;
+	padding-left: 15px;
+	padding-right: 15px;
 	height: 100%;
 	padding-top: 80px;
-	padding-bottom: 80px;
+	padding-bottom: 15px;
 	margin: 0 auto;
 	color: $font-dark;
 }
 .contact>article {
 	display: inline-block;
-	width: 400px;
-	height: 500px;
-	padding-left: 15px;
-	padding-right: 15px;
+	width: 30%;
+	padding-bottom: 15px;
+	vertical-align: top;
 }
 .contact h1 {
 	font-size: 25px;
@@ -280,20 +281,40 @@ footer p {
 	margin-top: 5px;
 	margin-bottom: 2px;
 	padding: 4px;
-	border: 1px solid $font-dark;
+	border: 1px solid $secondary-clr;
 	border-radius: 3px;
-	font-size: 20px !important;
+	font-size: 22px !important;
 	color: $font-light;
-	background-color: $font-dark;
+	background-color: $secondary-clr;
 }
-.google-maps {
+.responsive-square {
 	display: inline-block;
-	padding-left: 15px;
-	padding-right: 15px;
-	width: 100%;
-	height: 100%;
+	width: 65%;
+	padding-bottom: 48.75%;
+	position: relative;
+	background: blue;
 }
-
+.responsive-square>iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+    height: 100%;
+}
+@media (max-width: 850px) {
+	.contact>article {width: 100%}
+	.responsive-square {
+		width: 100%;
+		padding-bottom: 45%;
+	}
+}
+@media (max-width: 510px) {
+	.contact>article {width: 100%}
+	.responsive-square {
+		width: 100%;
+		padding-bottom: 75%;
+	}
+}
 
 
 
