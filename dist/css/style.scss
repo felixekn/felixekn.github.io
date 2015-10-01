@@ -17,22 +17,29 @@ $font-light: #fff;
 }
 html, body {
 	height: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+@media (max-device-width: 700px) {
+	html {
+		font-size: 32px;
+	}
 }
 nav {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	height: 55px;
+	height: 3.4375rem;
 	background-color: lighten($nav-clr,10%);
 	box-shadow: 1px 1px 5px #000;
 	z-index: 5000;
 }
 .contents {
+	position: relative;
 	@include display(flex);
 	box-sizing: border-box;
-	padding-left: 15px;
-	padding-right: 15px;
-	max-width: 1000px;
+	padding-left: 0.9375rem;
+	padding-right: 0.9375rem;
+	max-width: 62.5rem;
 	height: 100%;
 	margin: 0 auto;
 }
@@ -46,51 +53,96 @@ nav {
 	height: 85%;
 	margin: 0 auto;
 }
-.menu {
-	width: 100%;
-}
+.menu,
 .menu ul {
 	width: 100%;
 }
-.menu,
-.menu ul,
-.menu li,
-.menu span,
-.menu a {
+.menu.desktop,
+.menu.desktop ul,
+.menu.desktop li,
+.menu.desktop span,
+.menu.desktop a {
 	@include display(flex);
 	height: 100%;
 }
-.menu ul,
-.menu li,
-.menu span,
-.menu a {
+.menu.desktop ul,
+.menu.desktop li,
+.menu.desktop span,
+.menu.desktop a {
   	@include align-items(center);
   	@include justify-content(space-between);
 }
-.menu a,
-.menu>span {
+
+.menu-toggle.mobile.active {
+	background-color: $font-dark;
+}
+.menu-toggle.mobile.active span {
+	background-color: $font-light;
+}
+.menu.desktop a {
 	color: $primary-clr;
 }
-.menu>ul {
+.menu.desktop>ul {
 	padding-left: 2.5px;
 	padding-right: 2.5px;
 }
-.menu li a {
+.menu.desktop li a {
 	position: relative;
-	padding-left: 20px;
-	padding-right: 20px;
-	font-size: 18px;
+	font-size: 1.125rem;
 	font-weight: 200;
 	text-decoration: none;
 }
-.nav-active, .menu li a:hover {
+.nav-active.desktop,
+.menu.desktop li a:hover {
 	border-top: 5px solid rgba(0,0,0,0);
 	border-bottom: 5px solid $primary-clr;
+}
+.menu-toggle.mobile {
+	position: absolute;
+	top: 0.5625rem;
+	right: 0.9375rem;
+	padding-top: 0.3125rem;
+	padding-right: 0.3125rem;
+	padding-left: 0.3125rem;
+	@include user-select(none);
+}
+.menu-toggle.mobile span {
+	display: block;
+	width: 3.125rem;
+	height: 0.3125rem;
+	margin-bottom: 0.3125rem;
+	background-color: $font-dark;
+}
+.menu.mobile,
+.menu.mobile ul,
+.menu.mobile a {
+	height: 100%;
+}
+.menu.mobile li {
+	display: block;
+	padding-top: 0.9375rem;
+	text-align: right;
+}
+.menu.mobile li a {
+	padding: 0.3125rem;
+	font-size: 2rem;
+	font-weight: 600;
+	color: $font-light;
+	text-decoration: none;
+	background-color: $font-dark;
+}
+.menu.mobile.close li {
+	display: none;
 }
 .tel:hover {}
 .hero {
 	width: 100%;
 	height: 100vh;
+}
+@media (max-width: 700px), (max-device-width: 700px) {
+	.hero {
+		height: 25rem;
+	}
 }
 #carousel {
 	box-shadow: 1px 1px 5px rgba(0,0,0, 0.5);
@@ -111,7 +163,7 @@ nav {
 	height: 100%;
 	width: 100%;
 	font-style: normal;
-    font-size: 52px;
+    font-size: 3.25rem;
     line-height: 50px;
     font-weight: 900;
     letter-spacing: -0.025em;
@@ -136,20 +188,42 @@ nav {
 	left: 50px;
 	width: 90%;
 }
+@media (max-width: 700px), (max-device-width: 700px) {
+	.hero-image1 > header,
+	.hero-image2 > header,
+	.hero-image3 > header {
+	  	bottom: 50px;
+		left: 15px;
+	}
+}
 .hero-image1 > header > h1,
 .hero-image2 > header > h1,
 .hero-image3 > header > h1 {
 	margin: 0;
   	color: white;
   	line-height: 1;
-  	font-size: 70px;
+  	font-size: 4.375rem;
   	text-shadow: 2px 2px rgba(0,0,0,0.25);
+}
+@media (max-width: 700px), (max-device-width: 700px) {
+	.hero-image1 > header > h1,
+	.hero-image2 > header > h1,
+	.hero-image3 > header > h1 {
+	  	font-size: 1.875rem;
+	}
 }
 .main.front-page {
 	@include display(flex);
 	@include justify-content(center);
 	height: 350px;
 	margin: 0 auto;
+}
+@media (max-width: 700px), (max-device-width: 700px) {
+	.main.front-page {
+		display: block;
+		height: auto;
+		margin: 0;
+	}
 }
 .about-us {
 	display: inline-block;
@@ -159,6 +233,12 @@ nav {
 	width: 50%;
 	background-color: #E9ECEF;
 }
+@media (max-width: 700px), (max-device-width: 700px) {
+	.about-us {
+		display: block;
+		width: 100%
+	}
+}
 .about-us h3 {
 	padding-left: 15px;
 	padding-right: 15px;
@@ -167,13 +247,13 @@ nav {
 	margin: 0 auto;
 	max-width: 700px;
 	text-align: center;
-	font-size: 32px;
+	font-size: 2rem;
 	color: $secondary-clr;
 }
 .about-us p {
-	padding-left: 15px;
-	padding-right: 15px;
-	max-width: 700px;
+	padding-left: 0.9375rem;
+	padding-right: 0.9375rem;
+	width: 100%;
 	margin: 0 auto;
 	font-family: "proxima nova", "Arial";
 	font-size: 25px;
@@ -182,7 +262,11 @@ nav {
 	letter-spacing: 1px;
 	color: $primary-clr;
 }
-@media (max-width: 1040px) {.about-us p {font-size: 20px} }
+@media (max-width: 1040px) {
+	.about-us p {
+		font-size: 1.25rem;
+	}
+}
 .materials {
 	display: inline-block;
 	box-sizing: border-box;
@@ -191,19 +275,27 @@ nav {
 	text-align: center;
 	color: #252525;
 }
+@media (max-width: 700px), (max-device-width: 700px) {
+	.materials {
+		display: block;
+		width: 100%;
+	}
+}
 .materials h3 {
 	padding-top: 30px;
 	padding-bottom: 10px;
-	font-size: 32px;
+	font-size: 2rem;
 	color: $font-dark;
 }
 .materials p {
+	padding-left: 0.9375rem;
+	padding-right: 0.9375rem;
 	padding-bottom: 20px;
 	font-family: "proxima nova", "Arial";
 	font-size: 25px;
 	color: $font-dark;
 }
-@media (max-width: 1040px) {.materials p {font-size: 20px} }
+@media (max-width: 1040px) {.materials p {font-size: 1.25rem} }
 .materials section {
 	@include display(flex);
 	@include align-items(center);
@@ -219,72 +311,78 @@ nav {
 		padding-bottom: 15px;
 	}
 }
-// @media (max-width: )
-.about-us,
-.materials {
-  	opacity: 0;
-  	@include transition(all 500ms linear);
-  	@include transform(translate3d(-100px, 0px, 0px));
+@media (max-width: 910px) {
+	.materials section a img {
+		max-height: 70px;
+	}
 }
-
-.about-us.in-view,
-.materials.in-view {
-  	opacity: 1;
-  	@include transform(translate3d(0px, 0px, 0px));
+@media (max-width: 700px), (max-device-width: 700px) {
+	.materials section a img {
+		max-height: 4.375rem
+	}
 }
+// .about-us,
+// .materials {
+//   	opacity: 0;
+//   	@include transition(all 500ms linear);
+//   	@include transform(translate3d(-100px, 0px, 0px));
+// }
+// .about-us.in-view,
+// .materials.in-view {
+//   	opacity: 1;
+//   	@include transform(translate3d(0px, 0px, 0px));
+// }
 .logo-background {
 	padding-top: 25px;
 	padding-right: 10px;
 	padding-left: 10px;
 	background-color: #d55c19;
 }
-
 .footer {
 	color: $font-light;
 	background-color: $secondary-clr;
 }
 footer p {
 	text-align: center;
-	font-size: 12px;
+	font-size: 0.75rem;
 	padding-bottom: 10px;
 	padding-top: 10px;
 }
-
 //contact page
 .main.contact {
 	box-sizing: border-box;
 	max-width: 1000px;
-	padding-left: 15px;
-	padding-right: 15px;
-	height: 100%;
-	padding-top: 80px;
-	padding-bottom: 15px;
+	padding-left: 0.9375rem;
+	padding-right: 0.9375rem;
+	min-height: 100%;
+	padding-top: 5rem;
+	padding-bottom: 0.9375rem;
 	margin: 0 auto;
 	color: $font-dark;
 }
 .contact>article {
 	display: inline-block;
 	width: 30%;
-	padding-bottom: 15px;
+	padding-bottom: 0.9375rem;
 	vertical-align: top;
 }
 .contact h1 {
-	font-size: 25px;
+	font-size: 1.5625rem;
 	padding-bottom: 5px;
 }
 .contact h2 {
-	font-size: 18px;
+	font-size: 1.125rem;
 	padding-bottom: 3px;
 }
 .pf {
-	margin-left: 2px;
-	margin-right: 2px;
-	margin-top: 5px;
-	margin-bottom: 2px;
-	padding: 4px;
+	margin-left: 0.125rem;
+	margin-right: 0.125rem;
+	margin-top: 0.3125rem;
+	margin-bottom: 0.125rem;
+	padding: 0.25rem;
 	border: 1px solid $secondary-clr;
 	border-radius: 3px;
-	font-size: 22px !important;
+	font-size: 1.375rem !important;
 	color: $font-light;
 	background-color: $secondary-clr;
 }
@@ -309,7 +407,7 @@ footer p {
 		padding-bottom: 45%;
 	}
 }
-@media (max-width: 510px) {
+@media (max-width: 510px), (max-device-width: 700px) {
 	.contact>article {width: 100%}
 	.responsive-square {
 		width: 100%;

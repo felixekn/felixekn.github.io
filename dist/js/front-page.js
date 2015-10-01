@@ -26,6 +26,4 @@ $(document).ready(function() {
 	}
 	$window.on('scroll resize', check_if_in_view);
 	$window.trigger('scroll');
-
-
 });
