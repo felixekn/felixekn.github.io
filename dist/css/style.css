@@ -175,7 +175,8 @@ nav {
 
 @media (max-device-width: 768px) {
   .hero {
-    height: 50vh; } }
+    height: -webkit-calc(100vh - 260px);
+    height: calc(100vh - 260px); } }
 @media (max-width: 700px), (max-device-width: 700px) {
   .hero {
     height: 25rem; } }
