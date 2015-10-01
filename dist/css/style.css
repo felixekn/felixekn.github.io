@@ -274,7 +274,7 @@ nav {
   -o-justify-content: center;
   justify-content: center;
   -ms-flex-pack: center;
-  height: 350px;
+  height: 360px;
   margin: 0 auto; }
 
 @media (max-width: 700px), (max-device-width: 700px) {
