@@ -488,7 +488,8 @@ a.social-logo {
 
 .main.contact h1 {
   font-size: 1.5625rem;
-  padding-bottom: 5px; }
+  padding-bottom: 5px;
+  color: #064A8E; }
 
 @media (max-width: 700px), (max-device-width: 700px) {
   .main.contact h1 {
@@ -581,13 +582,15 @@ a.social-logo {
     margin: 0 auto -3rem; } }
 .main.marine article,
 .main.upholstery article,
-.main.industrial article {
+.main.industrial article,
+.main.products article {
   padding-left: 0.25rem;
   padding-right: 0.25rem; }
 
 .main.marine article h1,
 .main.upholstery article h1,
-.main.industrial article h1 {
+.main.industrial article h1,
+.main.products article h1 {
   padding-bottom: 0.625rem;
   font-size: 1.875rem;
   color: #064A8E; }
@@ -595,18 +598,21 @@ a.social-logo {
 @media (max-width: 700px), (max-device-width: 700px) {
   .main.marine article h1,
   .main.upholstery article h1,
-  .main.industrial article h1 {
+  .main.industrial article h1,
+  .main.products article h1 {
     font-size: 2rem; } }
 .main.marine article h2,
 .main.upholstery article h2,
-.main.industrial article h2 {
+.main.industrial article h2,
+.main.products article h2 {
   font-size: 1.2rem;
   color: #009082; }
 
 @media (max-width: 700px), (max-device-width: 700px) {
   .main.marine article h2,
   .main.upholstery article h2,
-  .main.industrial article h2 {
+  .main.industrial article h2
+  .main.products article h2 {
     font-size: 1.5rem; } }
 .main.marine article p,
 .main.upholstery article p,
@@ -625,6 +631,10 @@ a.social-logo {
   text-decoration: underline;
   font-weight: 500;
   color: #4D5763; }
+
+.main.products article h2 a {
+  text-decoration: underline;
+  color: #009082; }
 
 .biz-name {
   font-weight: 700;
