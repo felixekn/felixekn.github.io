@@ -34,7 +34,7 @@ nav {
 	box-shadow: 1px 1px 5px #000;
 	z-index: 5000;
 }
-@media (max-device-width: 700px) {
+@media (max-width: 700px), (max-device-width: 700px) {
 	nav { height: 4.6875rem; }
 }
 .contents {
@@ -59,6 +59,7 @@ nav {
 }
 img.social-logo {
 	height: 1.125rem;
+	width: 1.125rem;
 	vertical-align: middle;
 }
 menu {
@@ -148,6 +149,7 @@ a.social-logo {
 }
 .menu.mobile img.social-logo {
 	height: 3rem;
+	width: 3rem;
 }
 .menu.mobile.close li {
 	display: none;
