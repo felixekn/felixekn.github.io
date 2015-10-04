@@ -197,12 +197,12 @@ a.social-logo {
 
 @media (max-device-width: 768px) {
   .hero {
-    padding-top: 4.6875rem;
     height: -webkit-calc(100vh - 160px);
     height: calc(100vh - 160px); } }
 @media (max-width: 700px), (max-device-width: 700px) {
   .hero {
-    height: 25rem; } }
+    height: 25rem;
+    padding-top: 4.6875rem; } }
 #carousel {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   z-index: 500; }
