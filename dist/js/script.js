@@ -2,20 +2,23 @@ $(document).ready(function() {
 	//------------Mobile View Navigation------------//
 	var $menu = $('.menu');
 	var $menuToggle = $('.menu-toggle');
+	var $toTop = $('.back-to-top');
 	var resized;
 	// switches menu to mobile view if screen width or device width are <= 700px
-	function mobileView(menu, menuToggle) {
+	function mobileView(menu, menuToggle, toTop) {
 		if (window.matchMedia('(max-device-width: 700px)').matches || window.matchMedia('(max-width: 700px)').matches ) {
 			menu.removeClass('desktop');
 			menu.addClass('mobile')
 			menuToggle.addClass('mobile');
+			toTop.css("display", "block");
 		} else {
 			menu.removeClass('mobile');
 			menu.addClass('desktop');
 			menuToggle.removeClass('mobile');
+			toTop.css("display", "none");
 		}
 	}
-	mobileView($menu, $menuToggle);
+	mobileView($menu, $menuToggle, $toTop);
 
 	// open and closes nav
 	$menuToggle.click(function(event) {
@@ -56,7 +59,7 @@ $(document).ready(function() {
 	window.onresize = function () {
 		clearTimeout(resized);
 		resized = setTimeout(function() {
-			mobileView($menu, $menuToggle);
+			mobileView($menu, $menuToggle, $toTop);
 			imageCover($img);
 		}, 100);
 	};
