@@ -10,9 +10,8 @@
     <link rel="stylesheet" href="dist/owl-carousel/owl.carousel.css">
     <link rel="stylesheet" href="dist/owl-carousel/owl.theme.css">
     <script src="dist/js/jquery-2.1.4.min.js"></script>
+    <script src="dist/js/script.js"></script>
     <script src="dist/owl-carousel/owl.carousel.min.js"></script>
-    <script src="dist/js/front-page.js"></script>
-    <script src="dist/js/nav.js"></script>
   </head>
   <body>
     <nav>
@@ -27,11 +26,15 @@
             <a class="logo-wrapper" href="index.html">
               <img class="logo" src="images/logos/incanvas/InCanvas_logo.svg">
             </a>
-            <li><a href="marina.html">Marine</a></li>
-            <li><a href="marina.html">Upholstery</a></li>
-            <li><a href="marina.html">Industrial</a></li>
-            <li><a href="marina.html">Products</a></li>
-            <li><a href="directory/contact.html">Contact Us</a></li>
+            <li><a href="directory/marine.html">Marine</a></li>
+            <li><a href="directory/upholstery.html">Upholstery</a></li>
+            <li><a href="directory/industrial.html">Industrial</a></li>
+            <li><a href="directory/products.html">Products</a></li>
+            <li><a href="directory/contact.html">Contact Us</a>
+              <a class="social-logo" href="https://www.facebook.com/In-Canvas-281851358515513/timeline/">
+                <img class="social-logo" src="images/logos/social/facebook_logo.svg">
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -58,7 +61,7 @@
     <main class="main front-page">
       <article class="about-us">
         <h3>About Us</h3>
-        <p><b>In Canvas</b> manufactures <span>custom designed</span> and <span>sewn canvas products</span>. We have over <span>25 years experience</span> in the field and offer exceptional craftsmanship. All of our products are <span>fully guaranteed to meet customer expectations</span>. We offer custom canvas covers for the <span>marine industry</span>, <span>industrial/commercial applications</span>, <span>upholstery</span>, and <span>marine grade carpeting</span>.</p>
+        <p><b>In Canvas</b> manufactures <span>custom designed</span> and <span>sewn canvas products</span>. We have over <span>30 years experience</span> in the field and offer exceptional craftsmanship. All of our products are <span>fully guaranteed to meet customer expectations</span>. We offer custom canvas covers for the <span>marine industry</span>, <span>industrial/commercial applications</span>, <span>upholstery</span>, and <span>marine grade carpeting</span>.</p>
       </article>
       <article class="materials">
         <h3>We Recommend:</h3>
@@ -73,7 +76,37 @@
       </article>
     </main>
     <footer class="footer">
-      <p>12428 Hwy. 99, Unit 46, Everett, WA 98204-5502 | 425-355-4102 <span class="divider">|</span> <span class="new-line">Copyright &#169; 2015 In Canvas. All Rights Reserved.<span></p>
+      <p>12428 Hwy. 99, Unit 46, Everett, WA 98204-5502 | 425-355-4102 <span class="divider">|</span> <span class="new-line">Copyright &#169; 2015 In Canvas. All Rights Reserved.<span>
+      </p>
     </footer>
   </body>
+  <script>
+    $("#carousel").owlCarousel({
+      navigation : false, // Show next and prev buttons
+      slideSpeed : 300, //miliseconds
+      paginationSpeed : 400, //miliseconds
+      responsiveRefreshRate: 100,
+      autoPlay : 5000, //miliseconds
+      singleItem: true
+    });
+    //on-view scroll animation
+    var $about = $('.about-us');
+    var $materials = $('.materials');
+    var $window = $(window);
+    var window_top_position = $window.scrollTop();
+    var element_heights = [$about.outerHeight(),
+                $materials.outerHeight()];
+    function check_if_in_view() {
+      window_top_position = $window.scrollTop();
+      if (window_top_position >= element_heights[0] / 2.0 || $('.menu').hasClass('mobile')) {
+        $about.addClass('in-view');
+        $materials.addClass('in-view');
+      } else if (window_top_position == 0) {
+        $about.removeClass('in-view');
+        $materials.removeClass('in-view');
+      }
+    }
+    $window.on('scroll resize load', check_if_in_view);
+    $window.trigger('scroll');
+  </script>
 </html>
