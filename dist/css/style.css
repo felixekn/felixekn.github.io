@@ -161,7 +161,8 @@ a.social-logo {
 
 .menu.mobile,
 .menu.mobile ul,
-.menu.mobile a {
+.menu.mobile a,
+.social-wrapper {
   height: 100%; }
 
 .menu.mobile li {
@@ -178,9 +179,11 @@ a.social-logo {
   text-decoration: none;
   background-color: #4D5763; }
 
-.menu.mobile a.social-logo {
+.menu.mobile .social-wrapper {
   display: block;
-  padding-top: 0.625rem;
+  padding-top: 0.625rem; }
+
+.menu.mobile a.social-logo {
   background-color: transparent !important; }
 
 .menu.mobile img.social-logo {

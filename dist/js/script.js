@@ -30,9 +30,9 @@ $(document).ready(function() {
 			$menu.removeClass('close');
 		}
 	});
-	$(document).click(function(e) {
+	$(document).on('mousedown touchstart', function(e) {
 	  //if the click has happend inside the menu the menu toggle then ignore it
-	  if (!$(e.target).closest('.menu, .menu-toggle').length) {
+	  if (!$(e.target).closest('.menu ul li a, .menu ul li span a, .menu-toggle').length) {
 	    	$menuToggle.removeClass('active');
 			$menu.addClass('close');
 	  }
