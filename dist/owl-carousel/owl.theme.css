@@ -5,28 +5,12 @@
 
 .owl-theme .owl-controls{
 	position: relative;
-	top: -9vh;
+	top: -4.525rem;
 	text-align: center;
 }
-@media (max-device-width: 700px) {
+@media (max-width: 700px), (max-device-width: 700px) {
 	.owl-theme .owl-controls{
 		top: -50px;
-	}
-}
-@media only screen
-  	and (max-device-width: 1024px)
-  	and (max-device-width: 1024px)
-  	and (orientation: portrait) {
-  	.owl-theme .owl-controls{
-		top: -8vh;
-	}
-}
-@media only screen
-  	and (max-device-width: 1024px)
-  	and (max-device-width: 1024px)
-  	and (orientation: landscape) {
-  	.owl-theme .owl-controls{
-		top: -12vh;
 	}
 }
 

@@ -175,8 +175,15 @@ a.social-logo {
 }
 .hero {
 	width: 100%;
+	@include calc("height", "100vh - 2.5rem");
 	padding-top: 3.4375rem;
-	height: 95vh;
+}
+@media only screen
+	and (min-device-width : 768px)
+	and (max-device-width : 1024px)  {
+	.hero {
+		@include calc("height", "100vh - 5.5rem");
+	}
 }
 @media (max-width: 700px), (max-device-width: 700px) {
 	.hero {
@@ -254,15 +261,15 @@ a.social-logo {
 }
 .scroll-down-wrapper {
 	position: relative;
-	bottom: 4vh;
+	bottom: 1.875rem;
 	width: 100%;
 	z-index: 501;
 }
 .scroll-down {
 	display: block;
 	margin: 0 auto;
-	width: 7.5vh;
-	height: 7.5vh;
+	width: 3.75rem;
+	height: 3.75rem;
 	@include border-top-radius(50%);
 	@include border-bottom-radius(50%);
 	@include border-left-radius(50%);
@@ -271,30 +278,6 @@ a.social-logo {
 	background: url("../../images/icons/down-arrow.svg") no-repeat center center;
 	background-size: 70%;
 	background-color: $primary-clr;
-}
-@media only screen
-  	and (max-device-width: 1024px)
-  	and (max-device-width: 1024px)
-  	and (orientation: portrait) {
-  	.scroll-down-wrapper {
-		top: -6vh;
-	}
-	.scroll-down {
-		width: 6vh;
-		height: 6vh;
-	}
-}
-@media only screen
-  	and (max-device-width: 1024px)
-  	and (max-device-width: 1024px)
-  	and (orientation: landscape) {
-  	.scroll-down-wrapper {
-		top: -8vh;
-	}
-	.scroll-down {
-		width: 8vh;
-		height: 8vh;
-	}
 }
 .main.front-page {
 	@include display(flex);
@@ -413,9 +396,6 @@ a.social-logo {
 .footer {
 	color: $font-light;
 	background-color: $secondary-clr;
-}
-.footer.front-page {
-	position: relative;
 }
 .footer>p {
 	text-align: center;
