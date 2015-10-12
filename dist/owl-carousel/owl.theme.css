@@ -14,10 +14,19 @@
 	}
 }
 @media only screen
-	and (min-device-width: 768px)
-  	and (max-device-width: 1024px) {
+  	and (max-device-width: 1024px)
+  	and (max-device-width: 1024px)
+  	and (orientation: portrait) {
   	.owl-theme .owl-controls{
 		top: -8vh;
+	}
+}
+@media only screen
+  	and (max-device-width: 1024px)
+  	and (max-device-width: 1024px)
+  	and (orientation: landscape) {
+  	.owl-theme .owl-controls{
+		top: -12vh;
 	}
 }
 
