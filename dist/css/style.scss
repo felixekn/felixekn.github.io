@@ -34,6 +34,22 @@ nav {
 	box-shadow: 1px 1px 5px #000;
 	z-index: 5000;
 }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.2rem; }
+p {
+	font-size: 1.1rem;
+	line-height: 1.5rem;
+}
+@media (max-width: 700px), (max-device-width: 700px) {
+	h1 { font-size: 2.5rem; }
+	h2 { font-size: 2rem; }
+	h3 { font-size: 1.7rem; }
+	p {
+		font-size: 1.5rem;
+		line-height: 1.8rem;
+	}
+}
 @media (max-width: 700px), (max-device-width: 700px) {
 	nav { height: 4.6875rem; }
 }
@@ -146,7 +162,6 @@ a.social-logo {
 .menu.mobile .social-wrapper {
 	display: block;
 	padding-top: 0.625rem;
-	// background-color: transparent !important;
 }
 .menu.mobile a.social-logo {
 	background-color: transparent !important;
@@ -161,12 +176,7 @@ a.social-logo {
 .hero {
 	width: 100%;
 	padding-top: 3.4375rem;
-	height: 100vh;
-}
-@media (max-device-width: 768px) {
-	.hero {
-		@include calc(height, "100vh - 160px");
-	}
+	height: 95vh;
 }
 @media (max-width: 700px), (max-device-width: 700px) {
 	.hero {
@@ -199,15 +209,15 @@ a.social-logo {
     letter-spacing: -0.025em;
 }
 .hero-image1 {
-	background: url("../../images/examples/image2.jpg") no-repeat center center;
+	background: url("../../images/marine/image2.jpg") no-repeat center center;
     background-size: cover;
 }
 .hero-image2 {
-	background: url("../../images/examples/image38.jpg") no-repeat center center;
+	background: url("../../images/marine/image38.jpg") no-repeat center center;
 	background-size: cover;
 }
 .hero-image3 {
-	background: url("../../images/examples/image19.jpg") no-repeat center center;
+	background: url("../../images/marine/image19.jpg") no-repeat center center;
 	background-size: cover;
 }
 .hero-image1 > header,
@@ -239,37 +249,52 @@ a.social-logo {
 	.hero-image1 > header > h1,
 	.hero-image2 > header > h1,
 	.hero-image3 > header > h1 {
-	  	font-size: 2.5rem;
+	  	font-size: 3rem;
 	}
+}
+.scroll-down-wrapper {
+	position: relative;
+	bottom: 4vh;
+	width: 100%;
+	z-index: 501;
+}
+.scroll-down {
+	display: block;
+	margin: 0 auto;
+	width: 7.5vh;
+	height: 7.5vh;
+	@include border-top-radius(50%);
+	@include border-bottom-radius(50%);
+	@include border-left-radius(50%);
+	@include border-right-radius(50%);
+	z-index: 501;
+	background: url("../../images/icons/down-arrow.svg") no-repeat center center;
+	background-size: 70%;
+	background-color: $primary-clr;
 }
 .main.front-page {
 	@include display(flex);
 	@include justify-content(center);
-	height: 360px;
-	margin: 0 auto;
+	overflow: hidden;
 }
 @media (max-width: 700px), (max-device-width: 700px) {
 	.main.front-page {
 		display: block;
-		height: auto;
 		margin: 0;
 	}
 }
 .about-us {
-	display: inline-block;
-	box-sizing: border-box;
-	padding-bottom: 30px;
-	height: 100%;
+	@include flex(1);
 	width: 50%;
-	background-color: #E9ECEF;
+	padding-bottom: 30px;
+	background: #E9ECEF;
 }
 @media (max-width: 700px), (max-device-width: 700px) {
 	.about-us {
-		display: block;
-		width: 100%
+		width: 100%;
 	}
 }
-.about-us h3 {
+.about-us h1 {
 	padding-left: 15px;
 	padding-right: 15px;
 	padding-top: 30px;
@@ -277,7 +302,6 @@ a.social-logo {
 	margin: 0 auto;
 	max-width: 700px;
 	text-align: center;
-	font-size: 2rem;
 	color: $secondary-clr;
 }
 .about-us p {
@@ -292,29 +316,21 @@ a.social-logo {
 	letter-spacing: 1px;
 	color: $primary-clr;
 }
-@media (max-width: 1040px) {
-	.about-us p {
-		font-size: 1.35rem;
-	}
-}
+@media (max-width: 1040px) {.about-us p {font-size: 1.35rem} }
 .materials {
-	display: inline-block;
-	box-sizing: border-box;
-	height: 100%;
+	@include flex(1);
 	width: 50%;
 	text-align: center;
 	color: #252525;
 }
 @media (max-width: 700px), (max-device-width: 700px) {
 	.materials {
-		display: block;
 		width: 100%;
 	}
 }
-.materials h3 {
+.materials h1 {
 	padding-top: 30px;
 	padding-bottom: 10px;
-	font-size: 2rem;
 	color: $font-dark;
 }
 .materials p {
@@ -322,7 +338,7 @@ a.social-logo {
 	padding-right: 0.9375rem;
 	padding-bottom: 20px;
 	font-family: "proxima nova", "Arial";
-	font-size: 25px;
+	font-size: 1.5625rem;
 	color: $font-dark;
 }
 @media (max-width: 1040px) {.materials p {font-size: 1.35rem} }
@@ -338,7 +354,6 @@ a.social-logo {
 		max-height: 100px;
 		padding-left: 10px;
 		padding-right: 10px;
-		padding-bottom: 15px;
 	}
 }
 @media (max-width: 910px) {
@@ -363,14 +378,20 @@ a.social-logo {
   	@include transform(translate3d(0px, 0px, 0px));
 }
 .logo-background {
-	padding-top: 25px;
+	padding-top: 18px;
+	padding-bottom: 7px;
 	padding-right: 10px;
 	padding-left: 10px;
 	background-color: #d55c19;
 }
+
+// Footer
 .footer {
 	color: $font-light;
 	background-color: $secondary-clr;
+}
+.footer.front-page {
+	position: relative;
 }
 .footer>p {
 	text-align: center;
@@ -378,6 +399,7 @@ a.social-logo {
 	padding-bottom: 10px;
 	padding-top: 10px;
 	vertical-align: middle;
+	line-height: 1rem;
 }
 @media (max-width: 700px), (max-device-width: 700px) {
 	.divider {
@@ -385,6 +407,24 @@ a.social-logo {
 	}
 	.new-line {
 		display: block;
+	}
+}
+.footer.contact,
+.footer.marine,
+.footer.upholstery,
+.footer.industrial,
+.footer.products,
+.push {
+	height: 2.1875rem;
+}
+@media (max-width: 700px), (max-device-width: 700px) {
+	.footer.contact,
+	.footer.marine,
+	.footer.upholstery,
+	.footer.industrial,
+	.footer.products,
+	.push {
+		height: 3rem;
 	}
 }
 
@@ -410,25 +450,13 @@ a.social-logo {
 	width: 30%;
 	padding-bottom: 0.9375rem;
 	vertical-align: top;
-	line-height: 1.5rem;
 }
 .main.contact h1 {
-	font-size: 1.5625rem;
-	padding-bottom: 5px;
+	padding-bottom: 0.625rem;
 	color: $primary-clr;
 }
-@media (max-width: 700px), (max-device-width: 700px) {
-	.main.contact h1 { font-size: 1.8rem; }
-}
 .main.contact h2 {
-	font-size: 1.125rem;
 	padding-bottom: 0.1875rem;
-}
-@media (max-width: 700px), (max-device-width: 700px) {
-	.main.contact h2 { font-size: 1.5rem; }
-}
-@media (max-width: 700px), (max-device-width: 700px) {
-	.main.contact p { font-size: 1.3rem; }
 }
 .pf {
 	margin-left: 0.125rem;
@@ -467,25 +495,6 @@ a.social-logo {
 		padding-bottom: 75%;
 	}
 }
-.footer.contact,
-.footer.marine,
-.footer.upholstery,
-.footer.industrial,
-.footer.products,
-.push {
-	height: 2.1875rem;
-}
-@media (max-width: 700px), (max-device-width: 700px) {
-	.footer.contact,
-	.footer.marine,
-	.footer.upholstery,
-	.footer.industrial,
-	.footer.products,
-	.push {
-		height: 3rem;
-	}
-}
-
 
 // marine, upholstery, industrial, products
 .main.marine,
@@ -522,44 +531,18 @@ a.social-logo {
 .main.industrial article h1,
 .main.products article h1 {
 	padding-bottom: 0.625rem;
-	font-size: 1.875rem;
 	color: $primary-clr;
-}
-@media (max-width: 700px), (max-device-width: 700px) {
-	.main.marine article h1,
-	.main.upholstery article h1,
-	.main.industrial article h1,
-	.main.products article h1 {
-		font-size: 2rem
-	}
 }
 .main.marine article h2,
 .main.upholstery article h2,
 .main.industrial article h2,
 .main.products article h2 {
-	font-size: 1.2rem;
 	color: $secondary-clr;
-}
-@media (max-width: 700px), (max-device-width: 700px) {
-	.main.marine article h2,
-	.main.upholstery article h2,
-	.main.industrial article h2
-	.main.products article h2 {
-		font-size: 1.5rem;
-	}
 }
 .main.marine article p,
 .main.upholstery article p,
 .main.industrial article p {
-	line-height: 1.5rem;
 	padding-bottom: 0.625rem;
-}
-@media (max-width: 700px), (max-device-width: 700px) {
-	.main.marine article p,
-	.main.upholstery article p,
-	.main.industrial article p {
-		font-size: 1.35rem;
-	}
 }
 .main.marine article p a,
 .main.upholstery article p a,
@@ -574,7 +557,12 @@ a.social-logo {
 }
 .biz-name {
 	font-weight: 700;
-	font-size: 1.2rem;
+	font-size: 1.3rem;
+}
+@media (max-width: 700px), (max-device-width: 700px) {
+	.biz-name {
+		font-size: 1.7rem;
+	}
 }
 .img-gallery {
 	@include display(flex);
@@ -599,7 +587,7 @@ a.social-logo {
 .main.products>.img-gallery>.img-container {
 	height: 18.75rem;
 }
-@media (max-width: 999px) {
+@media (max-width: 800px) {
 	.img-container {
 		width: 50%;
 	}
@@ -650,7 +638,6 @@ a.social-logo {
 }
 .product-description h2 {
 	color: $primary-clr;
-	font-size: 1.875rem;
 }
 .product-description span {
 	display: block;
@@ -660,6 +647,8 @@ a.social-logo {
 .product-description p {
 	line-height: 1.5rem;
 }
+
+// back to top button
 .back-to-top {
 	position: fixed;
 	display: none;
