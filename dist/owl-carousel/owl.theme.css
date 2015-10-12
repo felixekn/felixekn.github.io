@@ -8,6 +8,19 @@
 	top: -9vh;
 	text-align: center;
 }
+@media (max-device-width: 700px) {
+	.owl-theme .owl-controls{
+		top: -50px;
+	}
+}
+@media only screen
+	and (min-device-width: 768px)
+  	and (max-device-width: 1024px) {
+  	.owl-theme .owl-controls{
+		top: -8vh;
+	}
+}
+
 
 /* Styling Next and Prev buttons */
 

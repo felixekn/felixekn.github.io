@@ -330,6 +330,13 @@ a.social-logo {
   background-size: 70%;
   background-color: #064A8E; }
 
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .scroll-down-wrapper {
+    top: -6vh; }
+
+  .scroll-down {
+    width: 6vh;
+    height: 6vh; } }
 .main.front-page {
   display: -webkit-box;
   display: -moz-box;
