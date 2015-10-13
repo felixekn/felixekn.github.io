@@ -110,8 +110,8 @@ a.social-logo {
 }
 .menu-toggle.mobile {
 	position: absolute;
-	top: 0.4375rem;
-	right: 0.9375rem;
+	top: 0.6375rem;
+	right: 0.4375rem;
 	padding-top: 0.3125rem;
 	padding-right: 0.3125rem;
 	padding-left: 0.3125rem;
@@ -119,8 +119,8 @@ a.social-logo {
 }
 .menu-toggle.mobile span {
 	display: block;
-	width: 3.125rem;
-	height: 0.4375rem;
+	width: 2.5rem;
+	height: 0.3125rem;
 	margin-bottom: 0.3125rem;
 	background-color: $font-dark;
 }
@@ -389,6 +389,10 @@ a.social-logo {
 	line-height: 1rem;
 }
 @media (max-width: 700px), (max-device-width: 700px) {
+	.footer>p {
+		font-size: 0.65rem;
+		line-height: 0.75rem;
+	}
 	.divider {
 		display: none;
 	}
@@ -411,7 +415,7 @@ a.social-logo {
 	.footer.industrial,
 	.footer.products,
 	.push {
-		height: 3.2rem;
+		height: 3rem;
 	}
 }
 
@@ -607,6 +611,10 @@ a.social-logo {
 	display: inline-block;
 	width: 15.125rem;
 	padding-right: 0.9375rem;
+}
+.product-img.none {
+   	background-color: rgba(#ccc, 0.3);
+   	background-clip: content-box;
 }
 .product-description {
 	box-sizing: border-box;
