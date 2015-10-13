@@ -13,9 +13,6 @@ html, body {
   -webkit-text-size-adjust: 100%;
   color: #4D5763; }
 
-@media (max-device-width: 700px) {
-  html {
-    font-size: 32px; } }
 nav {
   position: fixed;
   top: 0;
@@ -38,22 +35,6 @@ p {
   font-size: 1.1rem;
   line-height: 1.5rem; }
 
-@media (max-width: 700px), (max-device-width: 700px) {
-  h1 {
-    font-size: 2.5rem; }
-
-  h2 {
-    font-size: 2rem; }
-
-  h3 {
-    font-size: 1.7rem; }
-
-  p {
-    font-size: 1.5rem;
-    line-height: 1.8rem; } }
-@media (max-width: 700px), (max-device-width: 700px) {
-  nav {
-    height: 4.6875rem; } }
 .contents {
   position: relative;
   display: -webkit-box;
@@ -168,7 +149,7 @@ a.social-logo {
 
 .menu-toggle.mobile {
   position: absolute;
-  top: 0.9375rem;
+  top: 0.4375rem;
   right: 0.9375rem;
   padding-top: 0.3125rem;
   padding-right: 0.3125rem;
@@ -198,7 +179,7 @@ a.social-logo {
 
 .menu.mobile li a {
   padding: 0.3125rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #fff;
   vertical-align: middle;
@@ -213,8 +194,8 @@ a.social-logo {
   background-color: transparent !important; }
 
 .menu.mobile img.social-logo {
-  height: 3rem;
-  width: 3rem; }
+  height: 2.5rem;
+  width: 2.5rem; }
 
 .menu.mobile.close li {
   display: none; }
@@ -231,8 +212,7 @@ a.social-logo {
     height: calc(100vh - 5.5rem); } }
 @media (max-width: 700px), (max-device-width: 700px) {
   .hero {
-    height: 25rem;
-    padding-top: 4.6875rem; } }
+    height: 25rem; } }
 #carousel {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   z-index: 500; }
@@ -310,7 +290,7 @@ a.social-logo {
   .hero-image1 > header > h1,
   .hero-image2 > header > h1,
   .hero-image3 > header > h1 {
-    font-size: 3rem; } }
+    font-size: 2.5rem; } }
 .scroll-down-wrapper {
   position: relative;
   bottom: 1.875rem;
@@ -388,16 +368,15 @@ a.social-logo {
   padding-right: 0.9375rem;
   width: 100%;
   margin: 0 auto;
-  font-family: "proxima nova", "Arial";
-  font-size: 25px;
+  font-size: 1.3rem;
   font-weight: 400;
   line-height: 1;
   letter-spacing: 1px;
   color: #064A8E; }
 
-@media (max-width: 1040px) {
+@media (max-width: 700px), (max-device-width: 700px) {
   .about-us p {
-    font-size: 1.35rem; } }
+    font-size: 1.1rem; } }
 .materials {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -408,27 +387,24 @@ a.social-logo {
   flex: 1;
   width: 50%;
   text-align: center;
-  color: #252525; }
+  color: #4D5763; }
 
 @media (max-width: 700px), (max-device-width: 700px) {
   .materials {
     width: 100%; } }
 .materials h1 {
   padding-top: 30px;
-  padding-bottom: 10px;
-  color: #4D5763; }
+  padding-bottom: 10px; }
 
 .materials p {
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
   padding-bottom: 20px;
-  font-family: "proxima nova", "Arial";
-  font-size: 1.5625rem;
-  color: #4D5763; }
+  font-size: 1.3rem; }
 
-@media (max-width: 1040px) {
+@media (max-width: 700px), (max-device-width: 700px) {
   .materials p {
-    font-size: 1.35rem; } }
+    font-size: 1.1rem; } }
 .materials section {
   display: -webkit-box;
   display: -moz-box;
@@ -466,16 +442,13 @@ a.social-logo {
   margin: 0 auto;
   max-width: 1000px; }
   .materials section a > img {
-    max-height: 100px;
+    max-height: 6.25rem;
     padding-left: 10px;
     padding-right: 10px; }
 
-@media (max-width: 910px) {
-  .materials section a img {
-    max-height: 70px; } }
 @media (max-width: 700px), (max-device-width: 700px) {
   .materials section a img {
-    max-height: 4.375rem; } }
+    max-height: 2.375rem; } }
 .about-us,
 .materials {
   opacity: 0;
@@ -537,7 +510,7 @@ a.social-logo {
   .footer.industrial,
   .footer.products,
   .push {
-    height: 3rem; } }
+    height: 3.2rem; } }
 .main.contact {
   box-sizing: border-box;
   max-width: 1000px;
@@ -550,8 +523,7 @@ a.social-logo {
 
 @media (max-width: 700px), (max-device-width: 700px) {
   .main.contact {
-    padding-top: 6rem;
-    margin: 0 auto -3rem; } }
+    margin: 0 auto -3.2rem; } }
 .main.contact > article {
   display: inline-block;
   width: 30%;
@@ -623,8 +595,7 @@ a.social-logo {
   .main.upholstery,
   .main.industrial,
   .main.products {
-    padding-top: 6rem;
-    margin: 0 auto -3rem; } }
+    margin: 0 auto -3.2rem; } }
 .main.marine article,
 .main.upholstery article,
 .main.industrial article,
@@ -797,8 +768,8 @@ a.social-logo {
   display: none;
   bottom: 1.25rem;
   right: 0px;
-  width: 4.6875rem;
-  height: 4.6875rem;
+  width: 3.125rem;
+  height: 3.125rem;
   z-index: 50000;
   background: url("../../images/icons/up-arrow.svg") no-repeat center center;
   background-size: 70%;

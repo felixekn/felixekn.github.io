@@ -10,7 +10,7 @@
 }
 @media (max-width: 700px), (max-device-width: 700px) {
 	.owl-theme .owl-controls{
-		top: -50px;
+		top: -2.125rem;
 	}
 }
 
