@@ -22,6 +22,9 @@ nav {
   box-shadow: 1px 1px 5px #000;
   z-index: 5000; }
 
+@media (max-width: 700px), (max-device-width: 700px) {
+  nav {
+    height: 3rem; } }
 h1 {
   font-size: 2rem; }
 
@@ -51,6 +54,9 @@ p {
   height: 100%;
   margin: 0 auto; }
 
+@media (max-width: 700px), (max-device-width: 700px) {
+  .contents {
+    padding: 0; } }
 .logo-wrapper {
   display: -webkit-box;
   display: -moz-box;
@@ -149,7 +155,7 @@ a.social-logo {
 
 .menu-toggle.mobile {
   position: absolute;
-  top: 0.6375rem;
+  top: 0.4375rem;
   right: 0.4375rem;
   padding-top: 0.3125rem;
   padding-right: 0.3125rem;
@@ -175,6 +181,7 @@ a.social-logo {
 .menu.mobile li {
   display: block;
   padding-top: 0.9375rem;
+  padding-right: 0.4375rem;
   text-align: right; }
 
 .menu.mobile li a {
@@ -212,7 +219,8 @@ a.social-logo {
     height: calc(100vh - 5.5rem); } }
 @media (max-width: 700px), (max-device-width: 700px) {
   .hero {
-    height: 25rem; } }
+    height: 25rem;
+    padding-top: 3rem; } }
 #carousel {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
   z-index: 500; }
@@ -441,6 +449,8 @@ a.social-logo {
   padding-bottom: 30px;
   margin: 0 auto;
   max-width: 1000px; }
+  .materials section a {
+    padding-bottom: 10px; }
   .materials section a > img {
     max-height: 6.25rem;
     padding-left: 10px;
@@ -448,7 +458,7 @@ a.social-logo {
 
 @media (max-width: 700px), (max-device-width: 700px) {
   .materials section a img {
-    max-height: 2.375rem; } }
+    max-height: 2.8125rem; } }
 .about-us,
 .materials {
   opacity: 0;
@@ -471,10 +481,10 @@ a.social-logo {
   transform: translate3d(0px, 0px, 0px); }
 
 .logo-background {
-  padding-top: 18px;
-  padding-bottom: 7px;
-  padding-right: 10px;
-  padding-left: 10px;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+  padding-right: 0.6rem;
+  padding-left: 0.6rem;
   background-color: #d55c19; }
 
 .footer {
